@@ -12,7 +12,7 @@ public class RTSCharacterController : MonoBehaviour
     public float TurnSpeed = 5f;
     [Space]
     public string idleTrigger = "Idle";
-    public string WalkTrigger = "Run"; 
+    public string WalkTrigger = "Run";
 
     [HideInInspector]
     public Animator animator;
@@ -39,6 +39,9 @@ public class RTSCharacterController : MonoBehaviour
 
         idleId = Animator.StringToHash(idleTrigger);
         walkId = Animator.StringToHash(WalkTrigger);
+
+       
+        
     }
 
     void Update()
@@ -58,6 +61,7 @@ public class RTSCharacterController : MonoBehaviour
             }
         }
     }
+
 
     public void MoveTo(Vector3 point)
     {

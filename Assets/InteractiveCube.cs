@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractiveCube : MonoBehaviour
 {
-    public GameObject iteminsert = new GameObject();
+    public GameObject iteminsert;
     public bool collide = false;
     // Start is called before the first frame update
     void Start()

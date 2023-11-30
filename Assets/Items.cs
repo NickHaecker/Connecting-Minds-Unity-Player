@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    private List<GameObject> listItems = new List<GameObject>();
+    private List<Item> listItems = new List<Item>();
     private GameObject item;
     //private Vector3 positionItem;
     
@@ -21,19 +21,23 @@ public class Items : MonoBehaviour
         
     }
 
-    private void storeItem(GameObject item)
+    /*private void storeItem(GameObject item)
     {
         listItems.Add(item);
-    }
+    }*/
 
-    public void getItemFromPlayerTwo(string itemname, Vector3 position)
+    public void getItemFromPlayerTwo(ItemData item)
     {
+        string itemname = item.Name;
+
         if (itemname == "KeyCard")
         {
-            item = GameObject.Find("KeyCard");
-            item.transform.position = position;
-            storeItem(item);
-            item.SetActive(true);
+            /*this.item = GameObject.Find("KeyCard");
+            //this.item.transform.position = position;
+            //storeItem(item);
+            this.item.SetActive(true);*/
+            Item i = listItems.Find(item => item.ited.Name == itemname);
+
         }
     }
 }

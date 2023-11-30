@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using WebSocketSharp;
+using Newtonsoft.Json;
+
 
 public class ClientListener : MonoBehaviour
 {
     [SerializeField] private BaseNetworkController networkController;
+    public Items items;
     private WebSocket webSocket;
     private bool playerTwoConnected = false;
     public GameObject waitingForPlayerPanel;
@@ -40,8 +43,8 @@ public class ClientListener : MonoBehaviour
     {
         if (revent.eventName == "ON_PLACE_ITEM")
         {
-            Debug.Log("OnPlaceItem Event");
-            OnPlaceItem("KeyCard",placeholder); // provisorisch bis ich das Gameobject von Suzan bekomme
+            ItemToPlace item = JsonConvert.DeserializeObject<ItemToPlace>(revent.GetBody()["ItemToPlace"].ToString());
+            OnPlaceItem(item); // provisorisch bis ich das Gameobject von Suzan bekomme
         }
         if (revent.eventName == "ON_CONNECT_PLAYER_TWO")
         {
@@ -92,11 +95,11 @@ public class ClientListener : MonoBehaviour
         
     }
 
-    void OnPlaceItem(string itemname, Vector3 position)
+    void OnPlaceItem(ItemToPlace itemplace)
     {
         Debug.Log("OnPlaceItem Methodenaufruf");
-        Items item = new Items();
-        item.getItemFromPlayerTwo(itemname, position);
+        //Items item = new Items();
+        items.getItemFromPlayerTwo(itemplace.data);
 
     }
     void OnPlayerTwoConnect()
@@ -140,5 +143,11 @@ public class ClientListener : MonoBehaviour
     void OnUpdateItem() 
     {
         Debug.Log("OnUpdateItem Methodenaufruf");
+    }
+
+    public struct ItemToPlace
+    {
+        public ItemData data;
+        public string position;
     }
 }

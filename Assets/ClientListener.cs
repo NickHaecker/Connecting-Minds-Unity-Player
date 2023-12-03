@@ -100,7 +100,7 @@ public class ClientListener : MonoBehaviour
     {
         Debug.Log("OnPlaceItem Methodenaufruf");
         //Items item = new Items();
-        items.getItemFromPlayerTwo(itemplace.data, pos.posdata);
+        items.getItemFromPlayerTwo(itemplace.Item, pos.Position);
 
     }
     void OnPlayerTwoConnect()
@@ -148,12 +148,12 @@ public class ClientListener : MonoBehaviour
 
     public struct ItemToPlace
     {
-        public ItemData data;
-        public string position;
+        public ItemData Item;
+        //public string position;
     }
 
     public struct PositionToSearch
     {
-        public PositionData posdata;
+        public PositionData Position;
     }
 }

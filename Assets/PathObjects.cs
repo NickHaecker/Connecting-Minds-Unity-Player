@@ -6,6 +6,7 @@ public class PathObjects : MonoBehaviour
 {
     // Start is called before the first frame update
     private GameObject obj;
+    private float movementspeed = 5f;
 
     void Start()
     {
@@ -18,11 +19,14 @@ public class PathObjects : MonoBehaviour
         
     }
 
-    void moveObject(string ID)
+    public void moveObject(string ID)
     {
+        float horizontalinput = Input.GetAxis("Horizontal");
+
         if (ID == "1")
         {
             obj = GameObject.Find("WallOne");
+            obj.transform.position = obj.transform.position + new Vector3(horizontalinput * movementspeed *Time.deltaTime, 0, 0);
         }
     }
 }

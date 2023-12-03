@@ -44,7 +44,8 @@ public class ClientListener : MonoBehaviour
         if (revent.eventName == "ON_PLACE_ITEM")
         {
             ItemToPlace item = JsonConvert.DeserializeObject<ItemToPlace>(revent.GetBody()["ItemToPlace"].ToString());
-            OnPlaceItem(item); // provisorisch bis ich das Gameobject von Suzan bekomme
+            PositionToSearch pos = JsonConvert.DeserializeObject<PositionToSearch>(revent.GetBody()["PositionToSearch"].ToString());
+            OnPlaceItem(item,pos); // provisorisch bis ich das Gameobject von Suzan bekomme
         }
         if (revent.eventName == "ON_CONNECT_PLAYER_TWO")
         {
@@ -95,11 +96,11 @@ public class ClientListener : MonoBehaviour
         
     }
 
-    void OnPlaceItem(ItemToPlace itemplace)
+    void OnPlaceItem(ItemToPlace itemplace, PositionToSearch pos)
     {
         Debug.Log("OnPlaceItem Methodenaufruf");
         //Items item = new Items();
-        items.getItemFromPlayerTwo(itemplace.data);
+        items.getItemFromPlayerTwo(itemplace.data, pos.posdata);
 
     }
     void OnPlayerTwoConnect()
@@ -149,5 +150,10 @@ public class ClientListener : MonoBehaviour
     {
         public ItemData data;
         public string position;
+    }
+
+    public struct PositionToSearch
+    {
+        public PositionData posdata;
     }
 }

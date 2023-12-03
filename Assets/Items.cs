@@ -5,6 +5,7 @@ using UnityEngine;
 public class Items : MonoBehaviour
 {
     private List<Item> listItems = new List<Item>();
+    private List<Position> listPosition = new List<Position>();
     private GameObject item;
     //private Vector3 positionItem;
     
@@ -26,11 +27,11 @@ public class Items : MonoBehaviour
         listItems.Add(item);
     }*/
 
-    public void getItemFromPlayerTwo(ItemData item)
+    public void getItemFromPlayerTwo(ItemData item, PositionData position)
     {
         string itemname = item.Name;
 
-        if (itemname == "KeyCard")
+        if (itemname == "KeyCard"&&position.ID=="1") //ID in dem Fall nur ein Exampel 
         {
             /*this.item = GameObject.Find("KeyCard");
             //this.item.transform.position = position;

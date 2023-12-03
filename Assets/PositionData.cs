@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-[CreateAssetMenu(fileName = "Position", menuName = "ConnectingMinds/Item")]
+[CreateAssetMenu(fileName = "Position", menuName = "ConnectingMinds/Position")]
 [Serializable]
 public class PositionData : Indexable
 {

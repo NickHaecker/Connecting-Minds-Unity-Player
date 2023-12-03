@@ -5,6 +5,8 @@ using UnityEngine;
 public class PathObjects : MonoBehaviour
 {
     // Start is called before the first frame update
+    private GameObject obj;
+
     void Start()
     {
         
@@ -16,8 +18,11 @@ public class PathObjects : MonoBehaviour
         
     }
 
-    void moveObject()
+    void moveObject(string ID)
     {
-
+        if (ID == "1")
+        {
+            obj = GameObject.Find("WallOne");
+        }
     }
 }

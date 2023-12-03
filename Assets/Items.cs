@@ -28,7 +28,7 @@ public class Items : MonoBehaviour
         listItems.Add(item);
     }*/
 
-    public void getItemFromPlayerTwo(ItemData item, PositionData position)
+    public void getItemFromPlayerTwo(ItemObject item, PositionObject position)
     {
         string itemname = item.Name;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    private List<Item> listItems = new List<Item>();
+    [SerializeField] private  List<Item> listItems = new List<Item>();
     private List<Position> listPosition = new List<Position>();
     private GameObject item;
     private PathObjects pathobj;
@@ -39,6 +39,8 @@ public class Items : MonoBehaviour
             //storeItem(item);
             this.item.SetActive(true);*/
             Item i = listItems.Find(item => item.ited.Name == itemname);
+            this.item = GameObject.Find(itemname);
+            this.item.SetActive(true);
             pathobj.moveObject(position.ID);
 
         }

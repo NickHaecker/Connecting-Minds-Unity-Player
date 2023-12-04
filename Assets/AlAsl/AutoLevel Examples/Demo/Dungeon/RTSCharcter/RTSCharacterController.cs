@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(NavMeshAgent), typeof(CharacterController), typeof(Animator))]
 public class RTSCharacterController : MonoBehaviour
@@ -28,6 +29,10 @@ public class RTSCharacterController : MonoBehaviour
 
     private int idleId;
     private int walkId;
+    
+
+    [SerializeField]
+    private float tapThreshhold = 50f;
 
     void Start()
     {
@@ -96,17 +101,17 @@ public class RTSCharacterController : MonoBehaviour
     }
 
 
-    public void MoveTo(Vector3 point)
-    {
-        navAgent.SetDestination(point);
-        marker.SetActive(true);
-        marker.transform.position = point;
-        animator.ResetTrigger(idleId);
-        animator.SetTrigger(walkId);
-        isNavAgentMoving = true;
-    }
+            public void MoveTo(Vector3 point)
+            {
+                navAgent.SetDestination(point);
+                marker.SetActive(true);
+                marker.transform.position = point;
+                animator.ResetTrigger(idleId);
+                animator.SetTrigger(walkId);
+                isNavAgentMoving = true;
+            }
 
-    void StopNavAgent()
+            void StopNavAgent()
     {
         if (navAgent.enabled)
             navAgent.ResetPath();
@@ -114,5 +119,12 @@ public class RTSCharacterController : MonoBehaviour
         animator.ResetTrigger(walkId);
         animator.SetTrigger(idleId);
         isNavAgentMoving = false;
+    }
+
+    private Vector2 getWorldPoint(Vector2 screenPoint)
+    {
+        RaycastHit hit;
+        Physics.Raycast(Camera.main.ScreenPointToRay(screenPoint), out hit);
+        return hit.point;
     }
 }

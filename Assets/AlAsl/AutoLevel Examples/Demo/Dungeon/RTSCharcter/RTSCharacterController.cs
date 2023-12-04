@@ -16,10 +16,8 @@ public class RTSCharacterController : MonoBehaviour
     public string WalkTrigger = "Run";
 
 
-    public Vector2 startPos;
-    public Vector2 direction;
-    public bool directionChosen;
-    public Camera MainCamera;
+    Vector2 startPosition = Vector2.zero;
+    Vector2 endPosition = Vector2.zero;
 
     [HideInInspector]
     public Animator animator;
@@ -57,44 +55,39 @@ public class RTSCharacterController : MonoBehaviour
 
     void Update()
     {
-        // Track a single touch as a direction control.
-        /*if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out var hit))
+        //    MoveTo(hit.point);
+        //}
 
-            // Handle finger movements based on touch phase.
+        Touch touch = new Touch();
+        if(Input.touchCount > 0)
+        {
+            touch = Input.GetTouch(0);
+
             switch (touch.phase)
             {
-                // Record initial touch position.
                 case TouchPhase.Began:
-                    startPos = touch.position;
-                    directionChosen = false;
+                    startPosition = touch.position;
                     break;
-
-                // Determine direction by comparing the current touch position with the initial one.
-                case TouchPhase.Moved:
-                    direction = touch.position - startPos;
-                    break;
-
-                // Report that a direction has been chosen when the finger is lifted.
                 case TouchPhase.Ended:
-                    directionChosen = true;
+                    endPosition = touch.position;
+
+                    if (Vector2.Distance(startPosition, endPosition) > 5f)
+                    {
+
+                    }
+                    else
+                    {
+                            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit))
+                            MoveTo(hit.point);
+                    }
+
+                    break;
+                default:
                     break;
             }
-        }
-        if (directionChosen)
-        {
-            // Something that uses the chosen direction...
-            //MainCamera.transform.position = new Vector3(direction.x, direction.y, Speed * Time.deltaTime);
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit))
-                MoveTo(direction);
-
-        }*/
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out var hit))
-            MoveTo(hit.point);
         }
 
         if (isNavAgentMoving)

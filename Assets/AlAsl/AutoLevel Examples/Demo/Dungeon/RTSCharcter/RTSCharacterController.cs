@@ -14,6 +14,10 @@ public class RTSCharacterController : MonoBehaviour
     public string idleTrigger = "Idle";
     public string WalkTrigger = "Run";
 
+
+    Vector2 startPosition = Vector2.zero;
+    Vector2 endPosition = Vector2.zero;
+
     [HideInInspector]
     public Animator animator;
     private NavMeshAgent navAgent;
@@ -46,10 +50,39 @@ public class RTSCharacterController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out var hit))
+        //    MoveTo(hit.point);
+        //}
+
+        Touch touch = new Touch();
+        if(Input.touchCount > 0)
         {
-            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out var hit))
-            MoveTo(hit.point);
+            touch = Input.GetTouch(0);
+
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    startPosition = touch.position;
+                    break;
+                case TouchPhase.Ended:
+                    endPosition = touch.position;
+
+                    if (Vector2.Distance(startPosition, endPosition) > 5f)
+                    {
+
+                    }
+                    else
+                    {
+                            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit))
+                            MoveTo(hit.point);
+                    }
+
+                    break;
+                default:
+                    break;
+            }
         }
 
         if (isNavAgentMoving)

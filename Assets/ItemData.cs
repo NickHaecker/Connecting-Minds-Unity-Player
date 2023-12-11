@@ -6,6 +6,8 @@ using System;
 [Serializable]
 public class ItemData : Indexable
 {
+    [HideInInspector]
+    public string _id;
     public string Name;
     public string Description;
 
@@ -24,6 +26,7 @@ public class ItemObject : ScriptableObjectData
 {
     public string Name;
     public string Description;
+    public string _id;
     public ItemObject(ItemData item)
     {
         Name = item.Name;

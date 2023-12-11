@@ -6,8 +6,8 @@ using System;
 [Serializable]
 public class PositionData : Indexable
 {
-
-
+    [HideInInspector]
+    public string _id;
     public string Name;
     public string ID;
 
@@ -26,6 +26,7 @@ public class PositionObject : ScriptableObjectData
 {
     public string Name;
     public string ID;
+    public string _id;
     public PositionObject(PositionData position)
     {
         Name = position.Name;

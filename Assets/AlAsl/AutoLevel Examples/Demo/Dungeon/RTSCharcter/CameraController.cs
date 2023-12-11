@@ -21,6 +21,7 @@ public class CameraController : MonoBehaviour
     public float planeHeight = 0;
 
     private CinemachineVirtualCamera vcam;
+    [SerializeField]
     private CinemachineTransposer transposer;
     private Camera cam;
 
@@ -29,6 +30,7 @@ public class CameraController : MonoBehaviour
     private Vector3 targetStart;
     private Vector2 mouseStart;
     private Vector3 velocity;
+    [SerializeField]
     private float ZoomLevel;
     private bool clampEnable;
     private Bounds bounds;
@@ -76,7 +78,7 @@ public class CameraController : MonoBehaviour
         var d = TargetZoomLevel - ZoomLevel;
         d = Cinemachine.Utility.Damper.Damp(d, ZoomDamp, Time.deltaTime);
         ZoomLevel = ZoomLevel + d;
-        SetZoomLevel();
+        //SetZoomLevel();
 
         var oldPos = vcam.m_Follow.position;
         Vector3 newPos = oldPos;

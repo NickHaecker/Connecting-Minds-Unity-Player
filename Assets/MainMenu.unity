@@ -1037,6 +1037,7 @@ MonoBehaviour:
   options: {fileID: 14087770}
   info: {fileID: 1366365586}
   audio: {fileID: 921202849}
+  optiontext: {fileID: 2030483697}
 --- !u!1 &1313436542
 GameObject:
   m_ObjectHideFlags: 0

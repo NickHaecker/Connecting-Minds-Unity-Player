@@ -19,6 +19,8 @@ public class RTSCharacterController : MonoBehaviour
     Vector2 startPosition = Vector2.zero;
     Vector2 endPosition = Vector2.zero;
 
+    [SerializeField] CameraController camcont;
+
     [HideInInspector]
     public Animator animator;
     private NavMeshAgent navAgent;

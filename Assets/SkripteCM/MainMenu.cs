@@ -10,9 +10,11 @@ public class MainMenu : MonoBehaviour
     public Button options;
     public Button info;
     public AudioSource audio;
+    public GameObject optiontext;
     // Start is called before the first frame update
     void Start()
     {
+        optiontext.SetActive(false);
         createSession.onClick.AddListener(StartSession);
         options.onClick.AddListener(OptionsClicked);
         info.onClick.AddListener(InfoClicked);
@@ -34,7 +36,20 @@ public class MainMenu : MonoBehaviour
     private void OptionsClicked()
     {
         audio.Play();
+
+        if (optiontext.activeSelf == true)
+        {
+            Debug.Log("In der If schleife drin mit Optiontext == true");
+            optiontext.SetActive(false);
+        }
+        else if(optiontext.activeSelf == false)
+        {
+            Debug.Log("In der If schleife drin mit Optiontext == false");
+            optiontext.SetActive(true);
+        }
+
         Debug.Log("Options wurde geklickt");
+
     }
 
     private void InfoClicked()

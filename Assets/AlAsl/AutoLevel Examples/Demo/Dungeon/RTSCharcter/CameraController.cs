@@ -3,9 +3,11 @@ using UnityEngine;
 using Cinemachine;
 
 [RequireComponent(typeof(CinemachineVirtualCamera))]
+
 public class CameraController : MonoBehaviour
 {
     [Header("Zoom")]
+
     public float TargetZoomLevel = 10f;
     public float MinZoom = 1f;
     public float MaxZoom = 10f;
@@ -114,4 +116,12 @@ public class CameraController : MonoBehaviour
         point = ray.GetPoint(dist);
         return success;
     }
+}
+public enum InputType_enum
+{
+    Tap,
+    UpSwipe,
+    DownSwipe,
+    LeftSwipe,
+    RightSwipe
 }

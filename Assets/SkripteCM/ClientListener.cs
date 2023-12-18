@@ -16,20 +16,24 @@ public class ClientListener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        networkController.TakeEvent += onTakeEvent;
-        networkController.AfterWebSocketConnected += onAfterWebSocketConnected;
-        networkController.BeforeWebSocketDisconnected += onBeforeWebSocketDisconnected;
-        networkController.Connect();
+        NetworkSingleton.Instance.GetNetworkController().TakeEvent += onTakeEvent;
+       
+        webSocket = NetworkSingleton.Instance.GetNetworkController().GetSocket();
+        //networkController.AfterWebSocketConnected += onAfterWebSocketConnected;
+        NetworkSingleton.Instance.GetNetworkController().BeforeWebSocketDisconnected += onBeforeWebSocketDisconnected;
+        //networkController.Connect();
         //waitingForPlayerPanel.SetActive(true);
     }
 
-    private void onAfterWebSocketConnected(WebSocket webSocket)
+    /*private void onAfterWebSocketConnected(WebSocket webSocket)
     {
         this.webSocket = webSocket;
-        SendEvent send = new SendEvent("CONNECT_PLAYER_ONE");
+        SendEvent send = new SendEvent("CONNECT_PLAYER_ONE"); "CREATE_SESSION"
         webSocket.Send(send.ToJson());
         Debug.Log("Player One Connected");
-    }
+    }*/
+
+
 
     private void onBeforeWebSocketDisconnected(WebSocket webSocket)
     {

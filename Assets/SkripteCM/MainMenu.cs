@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using WebSocketSharp;
 
 public class MainMenu : MonoBehaviour
 {
+    ReceivedEvent receivedEvent;
     public Button createSession;
     public Button options;
     public Button info;
@@ -14,9 +16,11 @@ public class MainMenu : MonoBehaviour
     public GameObject infotext;
     private LoadingSceneManager loader;
     private bool openedWindow;
+    [SerializeField]private NetworkController networkController;
     // Start is called before the first frame update
     void Start()
     {
+        receivedEvent = new ReceivedEvent();
         optiontext.SetActive(false);
         infotext.SetActive(false);
         createSession.onClick.AddListener(StartSession);
@@ -24,6 +28,7 @@ public class MainMenu : MonoBehaviour
         info.onClick.AddListener(InfoClicked);
         loader = new LoadingSceneManager();
         openedWindow = false;
+
     }
 
     // Update is called once per frame
@@ -41,7 +46,14 @@ public class MainMenu : MonoBehaviour
             optiontext.SetActive (false);
             infotext.SetActive(false);
         }
+        
         loader.LoadLevel(1);
+        WebSocket websocket = networkController.GetSocket();
+        SendEvent send = new SendEvent("CREATE_SESSION");
+        send.AddData("Type","PLAYER");
+        string sessionID = receivedEvent.GetBody()["Session"] as string;
+
+
         //SceneManager.LoadScene("Dengeon");
         Debug.Log("Create Session wurde geklickt und wird gestartet");
     }

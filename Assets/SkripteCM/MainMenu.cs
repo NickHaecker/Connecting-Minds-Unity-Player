@@ -4,61 +4,126 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using WebSocketSharp;
+using TMPro;
+using Newtonsoft.Json;
+using static ClientListener;
 
 public class MainMenu : MonoBehaviour
 {
     ReceivedEvent receivedEvent;
+    public TMP_Text sessionIDText;
+    public TMP_Text meldung;
+    public TMP_Text sessionIDInput;
+    public Button sessionOK;
     public Button createSession;
     public Button options;
     public Button info;
+    public Button joinsession;
+    public Button createnewsession;
     public AudioSource audio;
     public GameObject optiontext;
     public GameObject infotext;
+    public GameObject sessionWindow;
+    public GameObject joinSessionWindow;
     private LoadingSceneManager loader;
     private bool openedWindow;
-    [SerializeField]private NetworkController networkController;
+    private bool joinsessionpressed;
+    private bool createsessionpressed;
+    [SerializeField] private NetworkController networkController;
     // Start is called before the first frame update
     void Start()
     {
+        joinsessionpressed = false;
+        createsessionpressed = false;
         receivedEvent = new ReceivedEvent();
         optiontext.SetActive(false);
         infotext.SetActive(false);
-        createSession.onClick.AddListener(StartSession);
-        options.onClick.AddListener(OptionsClicked);
-        info.onClick.AddListener(InfoClicked);
+        sessionWindow.SetActive(false);
+        joinSessionWindow.SetActive(false);
         loader = new LoadingSceneManager();
         openedWindow = false;
+        NetworkSingleton.Instance.GetNetworkController().TakeEvent += onTakeEvent;
 
     }
-
+    private void onTakeEvent(ReceivedEvent revent)
+    {
+        if (revent.eventName == "ON_CREATE_SESSION")
+        {
+            Debug.Log("ON_CREATE_SESSION Event");
+            sessionIDText.text = revent.GetBody()["Session"].ToString();
+        }
+        if (revent.eventName == "ON_JOIN_SESSION")
+        {
+            Debug.Log("ON_JOIN_SESSION Event");
+            meldung.text = revent.GetBody()["Session"].ToString()+" Watcher ist der Session gejoined";
+        }
+        if (revent.eventName == "SESSION_NOT_FOUND")
+        {
+            Debug.Log("SESSION_NOT_FOUND Event");
+            meldung.text = revent.GetBody()["Message"].ToString();
+        }
+        if (revent.eventName == "SESSION_IS_OCCUPIED")
+        {
+            Debug.Log("SESSION_IS_OCCUPIED Event");
+            meldung.text = revent.GetBody()["Message"].ToString();
+        }
+    }
     // Update is called once per frame
     void Update()
     {
 
     }
+    private void JoinSession(string sessionIDEingabe)
+    {
+        WebSocket websocket = networkController.GetSocket();
+        SendEvent send = new SendEvent("JOIN_SESSION");
+        send.AddData("Type", "PLAYER");
+        websocket.Send(send.ToJson());
+        joinSessionWindow.SetActive(true);
+        Debug.Log("Player joined Session");
+    }
 
-    private void StartSession()
+    public void JoinSessionPressed() 
+    {
+        joinsessionpressed = true;
+    }
+    public void CreateSessionPressed() 
+    {
+        createsessionpressed = true;
+    }
+
+    public void StartSession()
     {
         audio.Play();
 
-        if(openedWindow == true) 
+        if (openedWindow == true)
         {
-            optiontext.SetActive (false);
+            optiontext.SetActive(false);
             infotext.SetActive(false);
         }
-        
-        loader.LoadLevel(1);
-        WebSocket websocket = networkController.GetSocket();
-        SendEvent send = new SendEvent("CREATE_SESSION");
-        send.AddData("Type","PLAYER");
-        string sessionID = receivedEvent.GetBody()["Session"] as string;
+        if (joinsession == true)
+        {
+            string idses = sessionIDInput.text;
+            JoinSession(idses);
+        }
+        else if (createsessionpressed == true)
+        {
+            WebSocket websocket = networkController.GetSocket();
+            SendEvent send = new SendEvent("CREATE_SESSION");
+            send.AddData("Type", "PLAYER");
+            websocket.Send(send.ToJson());
+            sessionWindow.SetActive(true);
+            Debug.Log("Create Session wurde geklickt und wird gestartet");
+        }
 
-
-        //SceneManager.LoadScene("Dengeon");
-        Debug.Log("Create Session wurde geklickt und wird gestartet");
     }
 
-    private void OptionsClicked()
+    public void LoadScene()
+    {
+        loader.LoadLevel("Dengeon");
+    }
+
+    public void OptionsClicked()
     {
         audio.Play();
 
@@ -68,7 +133,7 @@ public class MainMenu : MonoBehaviour
             optiontext.SetActive(false);
             openedWindow = false;
         }
-        else if(optiontext.activeSelf == false)
+        else if (optiontext.activeSelf == false)
         {
             if (infotext == true)
             {
@@ -84,7 +149,7 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    private void InfoClicked()
+    public void InfoClicked()
     {
         audio.Play();
         if (infotext.activeSelf == true)
@@ -105,4 +170,5 @@ public class MainMenu : MonoBehaviour
         }
         Debug.Log("Info wurde geklickt");
     }
+
 }

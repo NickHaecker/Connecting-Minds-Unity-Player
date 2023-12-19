@@ -16,6 +16,7 @@ public class ClientListener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SendEvent send = new SendEvent("INIT_PLAYER");
         NetworkSingleton.Instance.GetNetworkController().TakeEvent += onTakeEvent;
        
         webSocket = NetworkSingleton.Instance.GetNetworkController().GetSocket();
@@ -38,59 +39,72 @@ public class ClientListener : MonoBehaviour
     private void onBeforeWebSocketDisconnected(WebSocket webSocket)
     {
         this.webSocket = webSocket;
-        SendEvent send = new SendEvent("DISCONNECT_PLAYER_ONE");
+        //SendEvent send = new SendEvent("DISCONNECT_PLAYER_ONE");
+        SendEvent send = new SendEvent("LEAVE_SESSION");
         webSocket.Send(send.ToJson());
         Debug.Log("Player One Disconnected");
     }
 
+
     private void onTakeEvent(ReceivedEvent revent)
     {
+        if(revent.eventName == "WAIT_FOR_WATCHER")
+        {
+            Debug.Log("WAIT_FOR_WATCHER Event");
+        }
+        if (revent.eventName == "WATCHER_EXISTING")
+        {
+            Debug.Log("WATCHER_EXISTING Event");
+        }
         if (revent.eventName == "ON_PLACE_ITEM")
         {
-            ItemToPlace item = JsonConvert.DeserializeObject<ItemToPlace>(revent.GetBody()["ItemToPlace"].ToString());
-            //PositionToSearch pos = JsonConvert.DeserializeObject<PositionToSearch>(revent.GetBody()["PositionToSearch"].ToString());
+            ItemToPlace item = JsonConvert.DeserializeObject<ItemToPlace>(revent.GetBody()["Items"].ToString());
+            
             OnPlaceItem(item); // provisorisch bis ich das Gameobject von Suzan bekomme
-        }
-        if (revent.eventName == "ON_CONNECT_PLAYER_TWO")
-        {
-            Debug.Log("OnConnectPlayerTwo Event");
-            OnPlayerTwoConnect();
-        }
-        if (revent.eventName == "ON_DISCONNECT_PLAYER_TWO")
-        {
-            Debug.Log("OnDisconnectPlayerTwo Event");
-            OnPlayerTwoDisconnect();
-        }
-        if(revent.eventName == "WAIT_FOR_PLAYER_TWO")
-        {
-            Debug.Log("WaitForPlayerTwo Event");
-            WaitForPlayerTwo();
         }
         if (revent.eventName == "ON_REMOVE_ITEM")
         {
+            ItemToRemove item = JsonConvert.DeserializeObject<ItemToRemove>(revent.GetBody()["Items"].ToString());
+
             Debug.Log("OnRemoveItem Event");
-            OnRemoveItem();
+            OnRemoveItem(item);
         }
         if (revent.eventName == "ON_UNLOCK_PATH")
         {
             Debug.Log("OnUnlockPath Event");
             OnUnlockPath();
         }
-        if (revent.eventName == "ON_LOAD_POSITION")
+        if (revent.eventName == "SEND_MESSAGE")
         {
-            Debug.Log("OnLoadPosition Event");
-            OnLoadPosition();
+            Debug.Log("SEND_MESSAGE Event");
+            OnSendMessage();
         }
-        if (revent.eventName == "ON_UPDATE_ITEM")
+        if (revent.eventName == "MISSING")
         {
-            Debug.Log("OnUpdateItem Event");
-            OnUpdateItem();
+            Debug.Log("MISSING Event");
+            OnMissing();
+        }
+        if (revent.eventName == "ON_LEAVE_SESSION")
+        {
+            Debug.Log("ON_LEAVE_SESSION Event");
+            OnLeaveSession();
+        }
+        if (revent.eventName == "NOT_IN_SESSION")
+        {
+            Debug.Log("NOT_IN_SESSION Event");
+            OnNotInSession();
+        }
+        if (revent.eventName == "WRONG_PLAYER")
+        {
+            Debug.Log("WRONG_PLAYER Event");
+            OnWrongPlayer();
         }
     }
 
     private void OnApplicationQuit()
     {
-        SendEvent disconnect = new SendEvent("DISCONNECT_PLAYER_ONE");
+        SendEvent disconnect = new SendEvent("LEAVE_SESSION");
+        disconnect.AddData("Type", "PLAYER");
         webSocket.Send(disconnect.ToJson());
         networkController.Disconnect();
     }
@@ -100,6 +114,28 @@ public class ClientListener : MonoBehaviour
         
     }
 
+    void OnWrongPlayer()
+    {
+
+    }
+    void OnNotInSession()
+    {
+
+    }
+    void OnLeaveSession()
+    {
+
+    }
+    
+    void OnSendMessage()
+    {
+
+    }
+    
+    void OnMissing()
+    {
+
+    }
     void OnPlaceItem(ItemToPlace itemplace)
     {
         Debug.Log("OnPlaceItem Methodenaufruf");
@@ -107,59 +143,25 @@ public class ClientListener : MonoBehaviour
         items.getItemFromPlayerTwo(itemplace.Item, itemplace.Position);
 
     }
-    void OnPlayerTwoConnect()
-    {
-        Debug.Log("OnConnectPlayerTwo Methodenaufruf");
-        playerTwoConnected = true;
-        waitingForPlayerPanel.SetActive(false);
-    }
-
-    void WaitForPlayerTwo()
-    {
-        Debug.Log("WaitForPlayerTwo Methodenaufruf");
-        if(playerTwoConnected == false)
-        {
-            //Time.timeScale = 0;
-            waitingForPlayerPanel.SetActive(true);
-        }
-    }
-
-    void OnPlayerTwoDisconnect()
-    {
-        Debug.Log("OnDisconnectPlayerTwo Methodenaufruf");
-        playerTwoConnected = false;
-    }
-
-    void OnRemoveItem()
+    void OnRemoveItem(ItemToRemove itemplace)
     {
         Debug.Log("OnRemoveItem Methodenaufruf");
-    }
+        //Items item = new Items();
+        items.removeItemFromPlayerTwo(itemplace.Item, itemplace.Position);
 
+    }
     void OnUnlockPath()
     {
         Debug.Log("OnUnlockPath Methodenaufruf");
     }
-
-    void OnLoadPosition()
-    {
-        Debug.Log("OnLoadPosition Methodenaufruf");
-    }
-
-    void OnUpdateItem() 
-    {
-        Debug.Log("OnUpdateItem Methodenaufruf");
-    }
-
     public struct ItemToPlace
     {
         public ItemObject Item;
         public PositionObject Position;
-
-        //public string position;
     }
-
-    /*public struct PositionToSearch
+    public struct ItemToRemove
     {
-        public PositionData Position;
-    }*/
+        public ItemObject Item; 
+        public PositionObject Position;
+    }
 }

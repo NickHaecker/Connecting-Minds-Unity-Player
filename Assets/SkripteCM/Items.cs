@@ -45,4 +45,18 @@ public class Items : MonoBehaviour
 
         }
     }
+
+    public void removeItemFromPlayerTwo(ItemObject item, PositionObject position)
+    {
+        string itemname = item.Name;
+
+        if (itemname == "KeyCard" && position.ID == "1") //ID in dem Fall nur ein Exampel 
+        {
+            Item i = listItems.Find(item => item.ited.Name == itemname);
+            this.item = GameObject.Find(itemname);
+            this.item.SetActive(false);
+            //pathobj.moveObject(position.ID);
+
+        }
+    }
 }

@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     public Button info;
     public Button joinsession;
     public Button createnewsession;
-    public AudioSource audio;
+    public AudioSource audiosauce;
     public GameObject optiontext;
     public GameObject infotext;
     public GameObject sessionWindow;
@@ -94,7 +94,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartSession()
     {
-        audio.Play();
+        audiosauce.Play();
 
         if (openedWindow == true)
         {
@@ -125,7 +125,7 @@ public class MainMenu : MonoBehaviour
 
     public void OptionsClicked()
     {
-        audio.Play();
+        audiosauce.Play();
 
         if (optiontext.activeSelf == true)
         {
@@ -151,7 +151,7 @@ public class MainMenu : MonoBehaviour
 
     public void InfoClicked()
     {
-        audio.Play();
+        audiosauce.Play();
         if (infotext.activeSelf == true)
         {
             Debug.Log("In der If schleife drin mit infotext == true");

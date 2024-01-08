@@ -1,26 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PathObjects : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private List<Path> listPaths = new List<Path>();
     private GameObject obj;
     private float movementspeed = 5f;
 
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void UnlockPath(CMPath path)
     {
-        
+        string pathname = path.Name;
+        if (pathname == "PathOne") 
+        {
+            Path p = listPaths.Find(path => path.pathdata.Name == pathname);
+            p.activate();
+        }
+
+    }
+    public void deactivateAll()
+    {
+        foreach (Path path in listPaths)
+        {
+            path.deactivate();
+        }
     }
 
     public void moveObject(string ID)
     {
+        
         float horizontalinput = Input.GetAxis("Horizontal");
 
         if (ID == "1")

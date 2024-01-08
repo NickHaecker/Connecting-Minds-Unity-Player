@@ -6,15 +6,14 @@ public class Item : MonoBehaviour
 {
     public ItemData ited;
     [SerializeField]private GameObject item;
-    // Start is called before the first frame update
-    void Start()
+
+    public void activate()
     {
-        
+        item.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void deactivate() 
+    { 
+        item.SetActive(false);
     }
 }

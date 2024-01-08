@@ -45,7 +45,7 @@ public class ClientListener : MonoBehaviour
         webSocket.Send(send.ToJson());
         Debug.Log("Player One Disconnected");
     }
-    private void OnApplicationQuit()
+    public void OnApplicationQuit()
     {
         SendEvent disconnect = new SendEvent("LEAVE_SESSION");
         disconnect.AddData("Type", "PLAYER");

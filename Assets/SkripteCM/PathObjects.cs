@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class PathObjects : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private List<Path> listPaths = new List<Path>();
+    [SerializeField] private List<Paths> listPaths = new List<Paths>();
     private GameObject obj;
     private float movementspeed = 5f;
 
@@ -16,14 +16,14 @@ public class PathObjects : MonoBehaviour
         string pathname = path.Name;
         if (pathname == "PathOne") 
         {
-            Path p = listPaths.Find(path => path.pathdata.Name == pathname);
+            Paths p = listPaths.Find(path => path.pathdata.Name == pathname);
             p.activate();
         }
 
     }
     public void deactivateAll()
     {
-        foreach (Path path in listPaths)
+        foreach (Paths path in listPaths)
         {
             path.deactivate();
         }

@@ -8,10 +8,23 @@ public class Position : MonoBehaviour
     [SerializeField] private GameObject position;
 
     [SerializeField] private Paths gate;
+    [SerializeField]
+    private List<Position> newPositions;
+
+    [SerializeField] private bool rewarded = false;
 
 
     public Paths GetPath()
     {
         return gate;
     }
+    public List<Position> GetRewardPositions()
+    {
+        return newPositions;
+    }
+    public bool GetRewarded()
+    {
+        return rewarded;
+    }
+    public void SetRewared() { rewarded = true; }
 }

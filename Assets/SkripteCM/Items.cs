@@ -14,8 +14,6 @@ public class Items : MonoBehaviour
     {
         string itemname = item.Name;
 
-        //if (itemname == "KeyCard"&&position.ID=="1") //ID in dem Fall nur ein Exampel 
-        //{
 
         Item i = listItems.Find(item => item.ited.Name == itemname);
         Position pos = positions.Find(p => p.posdat.Name == position.Name);
@@ -24,28 +22,46 @@ public class Items : MonoBehaviour
 
         if (i.IsTarget(position))
         {
-            //pathobj.moveObject(position);
-            PathData path = pos.GetPath().pathdata;
-            List<PositionData> positionDatas = pos.GetPath().positions;
-            PositionObject[] positionObjects = new PositionObject[positionDatas.Count];
-
-            for(int y = 0; y < positionDatas.Count; y++)
+            Paths paths = pos.GetPath();
+            if (!paths.GetIsUnlocked())
             {
-                positionObjects[y] = positionDatas[y].GetData<PositionObject>();
+
+                paths.Unlock();
+                PathData path = paths.pathdata;
+                List<PositionData> positionDatas = pos.GetPath().positions;
+                PositionObject[] positionObjects = new PositionObject[positionDatas.Count];
+
+                for (int y = 0; y < positionDatas.Count; y++)
+                {
+                    positionObjects[y] = positionDatas[y].GetData<PositionObject>();
+                }
+
+
+                SendEvent unlockPath = new SendEvent("UNLOCK_PATH");
+
+                UnlockedPath unlockedPath = new UnlockedPath { Path = path.GetData<PathObject>(), Positions = positionObjects };
+                unlockPath.AddData("UnlockedPath", unlockedPath);
+                NetworkSingleton.Instance.GetNetworkController().GetWebSocket().Send(unlockPath.ToJson());
+
             }
+            if (!pos.GetRewarded())
+            {
+                pos.SetRewared();
 
-            //PositionData
-
-            SendEvent unlockPath = new SendEvent("UNLOCK_PATH");
-
-            UnlockedPath unlockedPath = new UnlockedPath { Path = path.GetData<PathObject>(), Positions = positionObjects };
-            unlockPath.AddData("UnlockedPath", unlockedPath);
-            NetworkSingleton.Instance.GetNetworkController().GetWebSocket().Send(unlockPath.ToJson());
-
+                if(pos.GetRewardPositions().Count == 0)
+                {
+                    return;
+                }
+                foreach(Position rewardPosition in pos.GetRewardPositions())
+                {
+                    SendEvent unlockPosition = new SendEvent("UNLOCK_POSITION");
+                    unlockPosition.AddData("Position", rewardPosition.posdat.GetData<PositionObject>());
+                    NetworkSingleton.Instance.GetNetworkController().GetWebSocket().Send(unlockPosition.ToJson());
+                }
+            }
+            
         }
-        //
 
-        //}
     }
 
 
@@ -53,12 +69,10 @@ public class Items : MonoBehaviour
     {
         string itemname = item.Name;
 
-        //if (itemname == "KeyCard" && position.ID == "1") //ID in dem Fall nur ein Exampel 
-        //{
+
         Item i = listItems.Find(item => item.ited.Name == itemname);
         i.deactivate();
 
-        //}
     }
 
     public void deactivateAll()

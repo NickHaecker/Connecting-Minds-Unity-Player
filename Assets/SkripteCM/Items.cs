@@ -23,7 +23,7 @@ public class Items : MonoBehaviour
         if (i.IsTarget(position))
         {
             Paths paths = pos.GetPath();
-            if (!paths.GetIsUnlocked())
+            if (paths != null && !paths.GetIsUnlocked())
             {
 
                 paths.Unlock();

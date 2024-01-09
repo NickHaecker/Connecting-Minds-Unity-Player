@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SessionData : MonoBehaviour
+public class SessionData
 {
     public bool ContainsWatcher;
     public PlacedItem[] PlacedItems;

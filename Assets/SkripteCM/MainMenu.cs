@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
     public GameObject infotext;
     public GameObject sessionWindow;
     public GameObject joinSessionWindow;
-    private LoadingSceneManager loader;
+    [SerializeField] private LoadingSceneManager loader;
     private bool openedWindow;
     private bool joinsessionpressed;
     private bool createsessionpressed;
@@ -40,10 +40,10 @@ public class MainMenu : MonoBehaviour
         infotext.SetActive(false);
         sessionWindow.SetActive(false);
         joinSessionWindow.SetActive(false);
-        loader = new LoadingSceneManager();
+        //loader = new LoadingSceneManager();
         openedWindow = false;
         NetworkSingleton.Instance.GetNetworkController().TakeEvent += onTakeEvent;
-
+        Cursor.visible = false;
     }
     private void onTakeEvent(ReceivedEvent revent)
     {
@@ -101,26 +101,27 @@ public class MainMenu : MonoBehaviour
             optiontext.SetActive(false);
             infotext.SetActive(false);
         }
-        if (joinsession == true)
-        {
-            string idses = sessionIDInput.text;
-            JoinSession(idses);
-        }
-        else if (createsessionpressed == true)
-        {
+        //if (joinsession == true)
+        //{
+        //    string idses = sessionIDInput.text;
+        //    JoinSession(idses);
+        //}
+        //else if (createsessionpressed == true)
+        //{
             WebSocket websocket = networkController.GetSocket();
             SendEvent send = new SendEvent("CREATE_SESSION");
             send.AddData("Type", "PLAYER");
             websocket.Send(send.ToJson());
             sessionWindow.SetActive(true);
             Debug.Log("Create Session wurde geklickt und wird gestartet");
-        }
+        //}
 
     }
 
     public void LoadScene()
     {
-        loader.LoadLevel("Dengeon");
+        //loader.LoadLevel("Dengeon");
+        SceneManagerController.LoadSceneSync("Dengeon",false);
     }
 
     public void OptionsClicked()

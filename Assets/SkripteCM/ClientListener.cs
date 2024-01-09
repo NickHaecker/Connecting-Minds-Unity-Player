@@ -24,7 +24,7 @@ public class ClientListener : MonoBehaviour
         messageBox.SetActive(false);
        
         SendEvent send = new SendEvent("INIT_PLAYER");
-        
+        networkController = NetworkSingleton.Instance.GetNetworkController();
         NetworkSingleton.Instance.GetNetworkController().TakeEvent += onTakeEvent;
         webSocket = NetworkSingleton.Instance.GetNetworkController().GetSocket();
         webSocket.Send(send.ToJson());
@@ -87,11 +87,18 @@ public class ClientListener : MonoBehaviour
                 OnPlaceItem(item);
             }
 
+            CMPath[] paths = sessionData.UnlockedPaths;
+            pathobj.deactivateAll();
+
+            foreach (CMPath path in paths)
+            {
+                OnUnlockPath(path);
+            }
+
         }
         if(revent.eventName == "ON_UNLOCK_PATH")
         {
-            SessionData sessionData = JsonConvert.DeserializeObject<SessionData>(revent.GetBody()["SessionData"].ToString());
-            CMPath[] paths = sessionData.UnlockedPaths;
+            CMPath[] paths = JsonConvert.DeserializeObject<CMPath[]>(revent.GetBody()["Paths"].ToString());
             pathobj.deactivateAll();
             
             foreach (CMPath path in paths)
@@ -223,7 +230,7 @@ public class ClientListener : MonoBehaviour
     {
         Debug.Log("OnPlaceItem Methodenaufruf");
         //Items item = new Items();
-        items.getItemFromPlayerTwo(itemplace.Item, itemplace.Position);
+        items.PlaceItem(itemplace.Item, itemplace.Position);
 
     }
     void OnUnlockPath(CMPath path)
@@ -232,4 +239,9 @@ public class ClientListener : MonoBehaviour
         pathobj.UnlockPath(path);
     }
    
+}
+public struct UnlockedPath
+{
+    public PathObject Path;
+    public PositionObject[] Positions;
 }

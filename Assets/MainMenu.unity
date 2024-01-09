@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -771,7 +771,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &351228675
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1570,7 +1570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &673497812
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3211,11 +3211,12 @@ MonoBehaviour:
   info: {fileID: 1366365586}
   joinsession: {fileID: 673497813}
   createnewsession: {fileID: 351228676}
-  audio: {fileID: 921202849}
+  audiosauce: {fileID: 921202849}
   optiontext: {fileID: 2030483697}
   infotext: {fileID: 374784139}
   sessionWindow: {fileID: 481258448}
   joinSessionWindow: {fileID: 695735807}
+  loader: {fileID: 0}
   networkController: {fileID: 682615133}
 --- !u!1 &1313436542
 GameObject:
@@ -4848,7 +4849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 151.3567, y: -0.000015408}
+  m_AnchoredPosition: {x: 148.1, y: -0.000015408}
   m_SizeDelta: {x: 147.2395, y: 43.597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1851832223
@@ -5312,7 +5313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1998120690
 RectTransform:
   m_ObjectHideFlags: 0

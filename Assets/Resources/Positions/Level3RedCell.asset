@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level3RedCell
   m_EditorClassIdentifier: 
   _id: 
-  Name: 
-  ID: 
+  Name: EnergyCellRed
+  ID: 9

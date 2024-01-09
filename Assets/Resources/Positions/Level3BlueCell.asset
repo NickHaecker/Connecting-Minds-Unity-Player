@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e85781774d4db5a41a6c66bf9f24326b, type: 3}
-  m_Name: Level3Box1
+  m_Name: Level3BlueCell
   m_EditorClassIdentifier: 
   _id: 
-  Name: Capsule
-  ID: 7
+  Name: EnergyCellBlue
+  ID: 11

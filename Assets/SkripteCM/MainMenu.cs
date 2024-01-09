@@ -94,6 +94,10 @@ public class MainMenu : MonoBehaviour
 
     public void StartSession()
     {
+        if (sessionWindow.activeInHierarchy)
+        {
+            return;
+        }
         audiosauce.Play();
 
         if (openedWindow == true)

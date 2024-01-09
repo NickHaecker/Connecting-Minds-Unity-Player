@@ -46,13 +46,17 @@ public class Items : MonoBehaviour
             }
             if (!pos.GetRewarded())
             {
-                pos.SetRewared();
+               
 
                 if(pos.GetRewardPositions().Count == 0)
                 {
                     return;
                 }
-                foreach(Position rewardPosition in pos.GetRewardPositions())
+
+                pos.SetRewared();
+
+
+                foreach (Position rewardPosition in pos.GetRewardPositions())
                 {
                     SendEvent unlockPosition = new SendEvent("UNLOCK_POSITION");
                     unlockPosition.AddData("Position", rewardPosition.posdat.GetData<PositionObject>());

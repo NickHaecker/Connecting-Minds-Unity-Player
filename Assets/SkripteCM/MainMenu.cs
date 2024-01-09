@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour
         //loader = new LoadingSceneManager();
         openedWindow = false;
         NetworkSingleton.Instance.GetNetworkController().TakeEvent += onTakeEvent;
-        Cursor.visible = false;
+
     }
     private void onTakeEvent(ReceivedEvent revent)
     {

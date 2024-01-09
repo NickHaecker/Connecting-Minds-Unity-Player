@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level3GreenCell
   m_EditorClassIdentifier: 
   _id: 
-  Name: 
-  ID: 
+  Name: EnergyCellGreen
+  ID: 10

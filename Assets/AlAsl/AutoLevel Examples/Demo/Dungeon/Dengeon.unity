@@ -3644,6 +3644,8 @@ MonoBehaviour:
   posdat: {fileID: 11400000, guid: d3b427d9473710a4d80196e19a0965aa, type: 2}
   position: {fileID: 581103685}
   gate: {fileID: 159627216}
+  newPositions: []
+  rewarded: 0
 --- !u!1001 &313398468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6161,7 +6163,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: c769ec3ff881225478443fff5fc4a8a5, type: 2}
     - target: {fileID: 8074923273068199058, guid: b838d60138d55a048ad9ca9de50530d1, type: 3}
       propertyPath: positions.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8074923273068199058, guid: b838d60138d55a048ad9ca9de50530d1, type: 3}
       propertyPath: positions.Array.data[0]
@@ -10753,6 +10755,8 @@ MonoBehaviour:
   posdat: {fileID: 11400000, guid: 39c7c354fefbd004698585c51868bf58, type: 2}
   position: {fileID: 1926277951}
   gate: {fileID: 159627216}
+  newPositions: []
+  rewarded: 0
 --- !u!1001 &1162793710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15774,6 +15778,8 @@ MonoBehaviour:
   posdat: {fileID: 11400000, guid: 7fea01ad7a0e6444b8481829a758f429, type: 2}
   position: {fileID: 1481288815}
   gate: {fileID: 434199252}
+  newPositions: []
+  rewarded: 0
 --- !u!1001 &1919579245
 PrefabInstance:
   m_ObjectHideFlags: 0

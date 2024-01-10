@@ -7,7 +7,7 @@ public class Item : MonoBehaviour
     public ItemData ited;
     [SerializeField]private GameObject item;
     [SerializeField]
-    private Position target;
+    private List<Position> targets;
 
     [SerializeField]
     private bool correctPlaced = false;
@@ -29,7 +29,19 @@ public class Item : MonoBehaviour
     }
     public bool IsTarget(CMPosition position)
     {
-        return position.Name == target.posdat.Name;
+        //return position.Name == target.posdat.Name;
+        bool iscontaining = false;
+
+        foreach(Position pos in targets)
+        {
+            if(position.Name == pos.posdat.Name)
+            {
+                iscontaining = true;
+            }
+        }
+
+
+        return iscontaining;
     }
     public void SetPlacedState(bool state)
     {

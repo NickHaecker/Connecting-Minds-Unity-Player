@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5504349f763adf41ac02c3c59d91832, type: 3}
-  m_Name: Path4
+  m_Name: Raum2
   m_EditorClassIdentifier: 
   _id: 
-  Name: Viertes Level
-  Description: "Ein gro\xDFes Level mit verwinkelten R\xE4umen"
+  Name: Raum 2
+  Description: "Der n\xE4chste Raum nach der Treppe und dem l\xF6sen des ersten R\xE4tsels"

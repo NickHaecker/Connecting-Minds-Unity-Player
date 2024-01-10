@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5504349f763adf41ac02c3c59d91832, type: 3}
-  m_Name: Path1
+  m_Name: Raum4
   m_EditorClassIdentifier: 
   _id: 
-  Name: Anfangs Level
-  Description: Der erste Raum
+  Name: 'Raum 4 '
+  Description: "Ein grosser Raumer nach L\xF6sen des dritten R\xE4tsels er hat mehrere
+    Traps"

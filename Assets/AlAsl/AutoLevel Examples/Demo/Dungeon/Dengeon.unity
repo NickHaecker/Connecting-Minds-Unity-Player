@@ -1796,7 +1796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7504832166272495775, guid: b838d60138d55a048ad9ca9de50530d1, type: 3}
       propertyPath: m_Name
-      value: Path5
+      value: Raum6
       objectReference: {fileID: 0}
     - target: {fileID: 8074923273068199058, guid: b838d60138d55a048ad9ca9de50530d1, type: 3}
       propertyPath: level
@@ -4416,7 +4416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7504832166272495775, guid: b838d60138d55a048ad9ca9de50530d1, type: 3}
       propertyPath: m_Name
-      value: Path4
+      value: Raum5
       objectReference: {fileID: 0}
     - target: {fileID: 8074923273068199058, guid: b838d60138d55a048ad9ca9de50530d1, type: 3}
       propertyPath: level
@@ -6288,7 +6288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7504832166272495775, guid: b838d60138d55a048ad9ca9de50530d1, type: 3}
       propertyPath: m_Name
-      value: Path1
+      value: Raum2
       objectReference: {fileID: 0}
     - target: {fileID: 8074923273068199058, guid: b838d60138d55a048ad9ca9de50530d1, type: 3}
       propertyPath: level
@@ -7851,7 +7851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7504832166272495775, guid: b838d60138d55a048ad9ca9de50530d1, type: 3}
       propertyPath: m_Name
-      value: Path3
+      value: Raum4
       objectReference: {fileID: 0}
     - target: {fileID: 8074923273068199058, guid: b838d60138d55a048ad9ca9de50530d1, type: 3}
       propertyPath: level
@@ -15505,7 +15505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7504832166272495775, guid: b838d60138d55a048ad9ca9de50530d1, type: 3}
       propertyPath: m_Name
-      value: Path2
+      value: Raum3
       objectReference: {fileID: 0}
     - target: {fileID: 8074923273068199058, guid: b838d60138d55a048ad9ca9de50530d1, type: 3}
       propertyPath: level

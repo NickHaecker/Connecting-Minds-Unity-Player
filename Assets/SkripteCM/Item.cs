@@ -9,6 +9,9 @@ public class Item : MonoBehaviour
     [SerializeField]
     private Position target;
 
+    [SerializeField]
+    private bool correctPlaced = false;
+
 
     public void activate()
     {
@@ -27,5 +30,13 @@ public class Item : MonoBehaviour
     public bool IsTarget(CMPosition position)
     {
         return position.Name == target.posdat.Name;
+    }
+    public void SetPlacedState(bool state)
+    {
+        correctPlaced = state;
+    }
+    public bool GetPlacedState()
+    {
+        return correctPlaced;
     }
 }

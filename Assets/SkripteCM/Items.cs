@@ -22,48 +22,49 @@ public class Items : MonoBehaviour
 
         if (i.IsTarget(position))
         {
-            Paths paths = pos.GetPath();
-            if (paths != null && !paths.GetIsUnlocked())
-            {
+            i.SetPlacedState(true);
+            //Paths paths = pos.GetPath();
+            //if (paths != null && !paths.GetIsUnlocked())
+            //{
 
-                paths.Unlock();
-                PathData path = paths.pathdata;
-                List<PositionData> positionDatas = pos.GetPath().positions;
-                PositionObject[] positionObjects = new PositionObject[positionDatas.Count];
+            //    paths.Unlock();
+            //    PathData path = paths.pathdata;
+            //    List<PositionData> positionDatas = pos.GetPath().positions;
+            //    PositionObject[] positionObjects = new PositionObject[positionDatas.Count];
 
-                for (int y = 0; y < positionDatas.Count; y++)
-                {
-                    positionObjects[y] = positionDatas[y].GetData<PositionObject>();
-                }
-
-
-                SendEvent unlockPath = new SendEvent("UNLOCK_PATH");
-
-                UnlockedPath unlockedPath = new UnlockedPath { Path = path.GetData<PathObject>(), Positions = positionObjects };
-                unlockPath.AddData("UnlockedPath", unlockedPath);
-                NetworkSingleton.Instance.GetNetworkController().GetWebSocket().Send(unlockPath.ToJson());
-
-            }
-            if (!pos.GetRewarded())
-            {
-               
-
-                if(pos.GetRewardPositions().Count == 0)
-                {
-                    return;
-                }
-
-                pos.SetRewared();
+            //    for (int y = 0; y < positionDatas.Count; y++)
+            //    {
+            //        positionObjects[y] = positionDatas[y].GetData<PositionObject>();
+            //    }
 
 
-                foreach (Position rewardPosition in pos.GetRewardPositions())
-                {
-                    SendEvent unlockPosition = new SendEvent("UNLOCK_POSITION");
-                    unlockPosition.AddData("Position", rewardPosition.posdat.GetData<PositionObject>());
-                    NetworkSingleton.Instance.GetNetworkController().GetWebSocket().Send(unlockPosition.ToJson());
-                }
-            }
-            
+            //    SendEvent unlockPath = new SendEvent("UNLOCK_PATH");
+
+            //    UnlockedPath unlockedPath = new UnlockedPath { Path = path.GetData<PathObject>(), Positions = positionObjects };
+            //    unlockPath.AddData("UnlockedPath", unlockedPath);
+            //    NetworkSingleton.Instance.GetNetworkController().GetWebSocket().Send(unlockPath.ToJson());
+
+            //}
+            //if (!pos.GetRewarded())
+            //{
+
+
+            //    if(pos.GetRewardPositions().Count == 0)
+            //    {
+            //        return;
+            //    }
+
+                //pos.SetRewared();
+
+
+            //foreach (Position rewardPosition in pos.GetRewardPositions())
+            //{
+            //    SendEvent unlockPosition = new SendEvent("UNLOCK_POSITION");
+            //    unlockPosition.AddData("Position", rewardPosition.posdat.GetData<PositionObject>());
+            //    NetworkSingleton.Instance.GetNetworkController().GetWebSocket().Send(unlockPosition.ToJson());
+            //}
+            //}
+
         }
 
     }
@@ -83,6 +84,7 @@ public class Items : MonoBehaviour
     {
         foreach (Item item in listItems)
         {
+            item.SetPlacedState(false);
             item.deactivate();
         }
     }

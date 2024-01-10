@@ -5,7 +5,7 @@ using UnityEngine;
 public class Paths : MonoBehaviour
 {
     public PathData pathdata;
-    public List<PositionData> positions = new List<PositionData>();
+    //public List<PositionData> positions = new List<PositionData>();
     [SerializeField] private GameObject blocked;
     [SerializeField] private GameObject level;
 

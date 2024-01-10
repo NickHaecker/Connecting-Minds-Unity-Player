@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EnergyCellCyan
   m_EditorClassIdentifier: 
   _id: 
-  Name: EnergyCell3
+  Name: EnergyCellCyan
   Description: Diese Energiezelle leuchtet Cyan

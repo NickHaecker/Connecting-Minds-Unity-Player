@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level3GreenCell
   m_EditorClassIdentifier: 
   _id: 
-  Name: EnergyCellGreen
+  Name: EnergyCellSocket Middle
   ID: 10

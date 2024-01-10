@@ -368,7 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 0ce19e237528da445b4b5e7a924adf44, type: 2}
   item: {fileID: 2126817171}
-  target: {fileID: 1916473578}
+  targets: []
   correctPlaced: 0
 --- !u!1001 &48354710
 PrefabInstance:
@@ -4240,7 +4240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: d72de09cd12c8694baa775e000a1e861, type: 2}
   item: {fileID: 1299532046}
-  target: {fileID: 1629413656}
+  targets: []
   correctPlaced: 0
 --- !u!1 &403670310
 GameObject:
@@ -6657,7 +6657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 560faf017fb80c94890a33ea0632d239, type: 2}
   item: {fileID: 1278592794}
-  target: {fileID: 353700564}
+  targets: []
   correctPlaced: 0
 --- !u!1 &684769149
 GameObject:
@@ -8030,7 +8030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: fc94e9eee6746454298b0a6a6279c92b, type: 2}
   item: {fileID: 485684614}
-  target: {fileID: 684769151}
+  targets: []
   correctPlaced: 0
 --- !u!1001 &788344409
 PrefabInstance:
@@ -10962,7 +10962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 67afc382462857b42bf8b923a22c578e, type: 2}
   item: {fileID: 1147135548}
-  target: {fileID: 864877034}
+  targets: []
   correctPlaced: 0
 --- !u!1001 &1144083498
 PrefabInstance:
@@ -11608,7 +11608,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: b65b4f08a79fe6346a45ec78e9c2bbb9, type: 2}
   item: {fileID: 711383488}
-  target: {fileID: 1125834598}
+  targets:
+  - {fileID: 1125834598}
+  - {fileID: 897939913}
   correctPlaced: 0
 --- !u!1001 &1253172161
 PrefabInstance:
@@ -12023,7 +12025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: b65b4f08a79fe6346a45ec78e9c2bbb9, type: 2}
   item: {fileID: 711383488}
-  target: {fileID: 897939913}
+  targets: []
   correctPlaced: 0
 --- !u!1001 &1278592792
 PrefabInstance:
@@ -12227,7 +12229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 083d777de8ff5e142aa3ec3c0737eb2f, type: 2}
   item: {fileID: 1205382389}
-  target: {fileID: 1335120526}
+  targets: []
   correctPlaced: 0
 --- !u!1 &1292293844
 GameObject:
@@ -13443,7 +13445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 2e6b21535e08ebd4ebc7c6b4a70a8ec0, type: 2}
   item: {fileID: 970277589}
-  target: {fileID: 1799369747}
+  targets: []
   correctPlaced: 0
 --- !u!1 &1400249170
 GameObject:
@@ -13667,7 +13669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 3233ab6c9a80dd6499f7511f2a3a0d02, type: 2}
   item: {fileID: 1608474694}
-  target: {fileID: 1407811060}
+  targets: []
   correctPlaced: 0
 --- !u!1001 &1409853347
 PrefabInstance:
@@ -16076,7 +16078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 75c55f93aa143324193b9db3076c98cf, type: 2}
   item: {fileID: 1534736353}
-  target: {fileID: 302220663}
+  targets: []
   correctPlaced: 0
 --- !u!1 &1799369745
 GameObject:
@@ -17514,7 +17516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 92fc85d0b8018804590bafae975cd10d, type: 2}
   item: {fileID: 981296346}
-  target: {fileID: 1160967478}
+  targets: []
   correctPlaced: 0
 --- !u!1001 &1972296645
 PrefabInstance:
@@ -18525,7 +18527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: fc94e9eee6746454298b0a6a6279c92b, type: 2}
   item: {fileID: 327521621}
-  target: {fileID: 991867017}
+  targets: []
   correctPlaced: 0
 --- !u!1 &2073016490
 GameObject:

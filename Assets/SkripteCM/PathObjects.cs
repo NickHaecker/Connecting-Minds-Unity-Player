@@ -18,6 +18,7 @@ public class PathObjects : MonoBehaviour
         //{
             Paths p = listPaths.Find(path => path.pathdata.Name == pathname);
             p.activate();
+            Debug.Log("Aktivierung von Path " + pathname + " wurde durchgeführt");
         //}
 
     }
@@ -25,6 +26,7 @@ public class PathObjects : MonoBehaviour
     {
         foreach (Paths path in listPaths)
         {
+            Debug.Log("Deaktiviere Path wird aufgerufen für "+path.name);
             path.deactivate();
         }
     }

@@ -15,6 +15,6 @@ public class Cinetouch : MonoBehaviour
     void Update()
     {
         cineCam.m_XAxis.Value += touchField.TouchDist.x * 200 * SensitivityX * Time.fixedDeltaTime;
-        cineCam.m_YAxis.Value += touchField.TouchDist.y * SensitivityY * Time.fixedDeltaTime;
+        //cineCam.m_YAxis.Value += touchField.TouchDist.y * SensitivityY * Time.fixedDeltaTime;
     }
 }

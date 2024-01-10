@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Raum4
   m_EditorClassIdentifier: 
   _id: 
-  Name: 'Raum 4 '
+  Name: Raum 4
   Description: "Ein grosser Raumer nach L\xF6sen des dritten R\xE4tsels er hat mehrere
     Traps"

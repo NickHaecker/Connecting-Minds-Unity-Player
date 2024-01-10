@@ -9,8 +9,8 @@ public class Paths : MonoBehaviour
     [SerializeField] private GameObject blocked;
     [SerializeField] private GameObject level;
 
-    [SerializeField]
-    private bool isUnlocked = false;
+    //[SerializeField]
+    //private bool isUnlocked = false;
 
     public void activate()
     {
@@ -23,12 +23,12 @@ public class Paths : MonoBehaviour
         blocked.SetActive(true);
         level.SetActive(false);
     }
-    public void Unlock()
-    {
-        isUnlocked = true;
-    }
-    public bool GetIsUnlocked()
-    {
-        return isUnlocked;
-    }
+    //public void Unlock()
+    //{
+    //    isUnlocked = true;
+    //}
+    //public bool GetIsUnlocked()
+    //{
+    //    return isUnlocked;
+    //}
 }

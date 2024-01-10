@@ -5498,7 +5498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a15cc64d930e3c438ae26aa71153b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Portaltext: {fileID: 0}
+  Portaltext: {fileID: 1280754141}
   portalGo: {fileID: 529986400}
   collide: 0
 --- !u!1 &536062187 stripped

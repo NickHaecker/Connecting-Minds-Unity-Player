@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EnergyCellBlue
   m_EditorClassIdentifier: 
   _id: 
-  Name: EnergyCell5
+  Name: EnergyCellBlue
   Description: Die Energiezelle leuchtet Blau

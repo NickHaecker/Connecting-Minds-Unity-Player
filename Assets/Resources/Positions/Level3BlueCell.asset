@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level3BlueCell
   m_EditorClassIdentifier: 
   _id: 
-  Name: EnergyCellBlue
+  Name: EnergyCellSocket Right
   ID: 11

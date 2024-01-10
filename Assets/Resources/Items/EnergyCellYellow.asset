@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EnergyCellYellow
   m_EditorClassIdentifier: 
   _id: 
-  Name: EnergyCell2
+  Name: EnergyCellYellow
   Description: Diese Energiezelle scheint Gelb

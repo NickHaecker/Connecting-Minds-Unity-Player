@@ -10,13 +10,13 @@ public class InteractiveCube : MonoBehaviour
     public Button portalGo;
     public bool collide = false;
     ClientListener listener;
-    private LoadingSceneManager loader;
+    //private LoadingSceneManager loader;
     // Start is called before the first frame update
     void Start()
     {
         iteminsert.SetActive(false);
         portalCollider.SetActive(false);
-        loader = new LoadingSceneManager();
+        //loader = new LoadingSceneManager();
         Button btn = portalGo.GetComponent<Button>();
         btn.onClick.AddListener(onClick);
     }
@@ -39,7 +39,7 @@ public class InteractiveCube : MonoBehaviour
     private void onClick()
     {
         listener.OnApplicationQuit();
-        loader.LoadLevel("SampleScene");
+        //loader.LoadLevel("SampleScene");
     }
 
     void Update()

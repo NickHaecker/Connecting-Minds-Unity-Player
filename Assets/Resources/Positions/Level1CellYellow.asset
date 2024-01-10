@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level1CellYellow
   m_EditorClassIdentifier: 
   _id: 
-  Name: EnergyCellSocket Middle
+  Name: EnergyCellSocket Middle 1
   ID: 3

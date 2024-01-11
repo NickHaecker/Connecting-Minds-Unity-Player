@@ -4043,11 +4043,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: be02f132c88bb2946a1a18b84c47b36a, type: 2}
   position: {fileID: 1278592794}
-  target: {fileID: 0}
+  target: {fileID: 11400000, guid: 560faf017fb80c94890a33ea0632d239, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1919579250}
+        m_TargetAssemblyTypeName: PositionActivator, Assembly-CSharp
+        m_MethodName: onPlaceItem
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &353860651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8292,24 +8304,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 0e023f2e7069a1244815bd4c77c16484, type: 2}
-  position: {fileID: 0}
+  position: {fileID: 1106278781}
   target: {fileID: 11400000, guid: 67afc382462857b42bf8b923a22c578e, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1919579249}
-        m_TargetAssemblyTypeName: PositionActivator, Assembly-CSharp
-        m_MethodName: onPlaceItem
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &868891106
 GameObject:
   m_ObjectHideFlags: 0
@@ -9625,11 +9625,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: be9bd725e4fa8e84890e2529ab8e0494, type: 2}
   position: {fileID: 0}
-  target: {fileID: 0}
+  target: {fileID: 11400000, guid: fc94e9eee6746454298b0a6a6279c92b, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1919579249}
+        m_TargetAssemblyTypeName: PositionActivator, Assembly-CSharp
+        m_MethodName: onPlaceItem
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1007451257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9963,6 +9975,93 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960c9fca720255d48b09d472bc35e819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1106278779
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1272049543}
+    m_Modifications:
+    - target: {fileID: 1787296620496872, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_Name
+      value: GreenSocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787296620496872, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23028051226476462, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e3aa8f9905858e4498dff522739f757, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+--- !u!4 &1106278780 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4854076730511848, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+  m_PrefabInstance: {fileID: 1106278779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1106278781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1787296620496872, guid: 8e810c42c8046244c9864a347cb8ce08, type: 3}
+  m_PrefabInstance: {fileID: 1106278779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1111568605
 GameObject:
   m_ObjectHideFlags: 0
@@ -11868,7 +11967,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4024606328036720, guid: c28e458222ee79741b1996c6c37ad99f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1106278780}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c28e458222ee79741b1996c6c37ad99f, type: 3}
 --- !u!4 &1272049543 stripped
@@ -16077,19 +16179,7 @@ MonoBehaviour:
   itemnamecorrect: 0
   itemwasplaced:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1919579250}
-        m_TargetAssemblyTypeName: PositionActivator, Assembly-CSharp
-        m_MethodName: onPlaceItem
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1001 &1800697113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69577,7 +69667,6 @@ SceneRoots:
   - {fileID: 1981201613}
   - {fileID: 531122791}
   - {fileID: 1204620082}
-  - {fileID: 150661674}
   - {fileID: 1868516286}
   - {fileID: 745377433}
   - {fileID: 1945677799}
@@ -69589,6 +69678,7 @@ SceneRoots:
   - {fileID: 535226054}
   - {fileID: 712807313}
   - {fileID: 1846450143}
+  - {fileID: 150661674}
   - {fileID: 1521785073}
   - {fileID: 1504353186}
   - {fileID: 2085796639}

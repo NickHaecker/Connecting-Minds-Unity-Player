@@ -9,7 +9,7 @@ public class PortalScript : MonoBehaviour
     public Button portalGo;
     public bool collide;
     ClientListener listener;
-    private LoadingSceneManager loader;
+    //private LoadingSceneManager loader;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class PortalScript : MonoBehaviour
         Portaltext.SetActive(false);
         Button btn = portalGo.GetComponent<Button>();
         btn.onClick.AddListener(onClick);
-        loader = new LoadingSceneManager();
+        //loader = new LoadingSceneManager();
     }
 
     // Update is called once per frame
@@ -46,6 +46,6 @@ public class PortalScript : MonoBehaviour
     private void onClick()
     {
         listener.OnApplicationQuit();
-        loader.LoadLevel("SampleScene");
+        //loader.LoadLevel("SampleScene");
     }
 }

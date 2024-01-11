@@ -16,7 +16,8 @@ public class Items : MonoBehaviour
 
 
         Item i = listItems.Find(item => item.ited.Name == itemname);
-        Position pos = positions.Find(p => p.posdat.Name == position.Name);
+        Position pos = positions.Find(p => p.posdat.ID == position.ID);
+
         //i.SetPosition(pos);
         //i.activate();
         pos.takeItem(i);

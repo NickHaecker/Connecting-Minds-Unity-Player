@@ -7,7 +7,7 @@ public class Position : MonoBehaviour
 {
     public PositionData posdat;
     [SerializeField] private GameObject position;
-    Item item;
+    [SerializeField] Item item;
     [SerializeField] ItemData target;
     [SerializeField] bool itemnamecorrect = false;
     [SerializeField] public UnityEvent<bool> itemwasplaced; // = new UnityEvent<bool>();
@@ -31,7 +31,7 @@ public class Position : MonoBehaviour
 
     public bool placedCorrect()
     {
-        if (this.item != null) 
+        if (this.item == null) 
         {
            return false;
         }

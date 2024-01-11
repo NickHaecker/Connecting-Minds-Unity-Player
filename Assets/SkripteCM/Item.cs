@@ -24,9 +24,16 @@ public class Item : MonoBehaviour
     public void deactivate() 
     { 
         item.SetActive(false);
+        Debug.Log(item.name + " wurde deaktiviert");
+
+        if(currentpos == null)
+        {
+            return;
+        }
+
         currentpos.removeItem(this);
         currentpos = null;
-        Debug.Log(item.name + " wurde deaktiviert");
+       
     }
     public void SetPosition(Position position)
     {

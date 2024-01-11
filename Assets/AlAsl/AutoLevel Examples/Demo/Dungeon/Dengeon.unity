@@ -368,9 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 0ce19e237528da445b4b5e7a924adf44, type: 2}
   item: {fileID: 2126817171}
-  targets:
-  - {fileID: 1916473578}
-  correctPlaced: 0
+  currentpos: {fileID: 0}
 --- !u!1001 &48354710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2052,13 +2050,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: be9bd725e4fa8e84890e2529ab8e0494, type: 2}
   - {fileID: 11400000, guid: be02f132c88bb2946a1a18b84c47b36a, type: 2}
   - {fileID: 11400000, guid: 5f0195c5efb22354a9e1f5e7afeb77ce, type: 2}
-  - {fileID: 11400000, guid: 0e023f2e7069a1244815bd4c77c16484, type: 2}
   - {fileID: 11400000, guid: 7fea01ad7a0e6444b8481829a758f429, type: 2}
-  - {fileID: 11400000, guid: cd51fb4dac51e8945a6d3758171f6cd2, type: 2}
   path: {fileID: 11400000, guid: 24e231357fe02c3439ec37e57f3404f9, type: 2}
-  items:
-  - {fileID: 1249349548}
-  - {fileID: 1888940198}
+  watchpositions:
+  - {fileID: 897939913}
+  - {fileID: 684769151}
   rewareded: 0
 --- !u!1 &171915591
 GameObject:
@@ -3786,6 +3782,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: d3b427d9473710a4d80196e19a0965aa, type: 2}
   position: {fileID: 581103685}
+  target: {fileID: 11400000, guid: 75c55f93aa143324193b9db3076c98cf, type: 2}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &313398468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4042,6 +4043,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: be02f132c88bb2946a1a18b84c47b36a, type: 2}
   position: {fileID: 1278592794}
+  target: {fileID: 0}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &353860651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4163,9 +4169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: d72de09cd12c8694baa775e000a1e861, type: 2}
   item: {fileID: 1299532046}
-  targets:
-  - {fileID: 1629413656}
-  correctPlaced: 0
+  currentpos: {fileID: 0}
 --- !u!1 &403670310
 GameObject:
   m_ObjectHideFlags: 0
@@ -4524,8 +4528,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a5a8659e0f33a6f49b57877189bf95c5, type: 2}
   - {fileID: 11400000, guid: e82c48d1be9efea49bd216ca1fc71300, type: 2}
   path: {fileID: 11400000, guid: c769ec3ff881225478443fff5fc4a8a5, type: 2}
-  items:
-  - {fileID: 1165916757}
+  watchpositions:
+  - {fileID: 705924755}
   rewareded: 0
 --- !u!1 &438907133
 GameObject:
@@ -6524,9 +6528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 560faf017fb80c94890a33ea0632d239, type: 2}
   item: {fileID: 1278592794}
-  targets:
-  - {fileID: 353700564}
-  correctPlaced: 0
+  currentpos: {fileID: 0}
 --- !u!1 &684769149
 GameObject:
   m_ObjectHideFlags: 0
@@ -6573,6 +6575,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 67830112187049542a49a270806bc86c, type: 2}
   position: {fileID: 1578496301}
+  target: {fileID: 11400000, guid: fc94e9eee6746454298b0a6a6279c92b, type: 2}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &689573437
 GameObject:
   m_ObjectHideFlags: 0
@@ -6923,6 +6930,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 3537640095c21c649af7e78d8e2f1866, type: 2}
   position: {fileID: 268781400}
+  target: {fileID: 11400000, guid: 5dafbc56b81c5c9468dd1c147a07f40f, type: 2}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &705924756
 Transform:
   m_ObjectHideFlags: 0
@@ -7105,9 +7117,9 @@ MonoBehaviour:
   reward: 1
   positions: []
   path: {fileID: 11400000, guid: 3108b347fd4ddd74db7a4ca7181986b5, type: 2}
-  items:
-  - {fileID: 1766885029}
-  - {fileID: 1966617862}
+  watchpositions:
+  - {fileID: 1160967478}
+  - {fileID: 302220663}
   rewareded: 0
 --- !u!1001 &730741414
 PrefabInstance:
@@ -7326,15 +7338,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3537789197241106721, guid: 753ff912b5edb4f439e9d1e7afcfba97, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.46011865
+      value: 0.46011862
       objectReference: {fileID: 0}
     - target: {fileID: 3537789197241106721, guid: 753ff912b5edb4f439e9d1e7afcfba97, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.000000070007154
       objectReference: {fileID: 0}
     - target: {fileID: 3537789197241106721, guid: 753ff912b5edb4f439e9d1e7afcfba97, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.000000036280145
       objectReference: {fileID: 0}
     - target: {fileID: 3537789197241106721, guid: 753ff912b5edb4f439e9d1e7afcfba97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8199,10 +8211,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 67830112187049542a49a270806bc86c, type: 2}
   - {fileID: 11400000, guid: 2e4380e7583a5c140989f5bf0cd6f3ab, type: 2}
   path: {fileID: 11400000, guid: 5dcd635ff3f53d949b66cc7eca5bd57b, type: 2}
-  items:
-  - {fileID: 1249349548}
-  - {fileID: 1408271625}
-  - {fileID: 384361868}
+  watchpositions:
+  - {fileID: 1629413656}
+  - {fileID: 1125834598}
+  - {fileID: 1407811060}
   rewareded: 0
 --- !u!1 &852547946
 GameObject:
@@ -8281,6 +8293,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 0e023f2e7069a1244815bd4c77c16484, type: 2}
   position: {fileID: 0}
+  target: {fileID: 11400000, guid: 67afc382462857b42bf8b923a22c578e, type: 2}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1919579249}
+        m_TargetAssemblyTypeName: PositionActivator, Assembly-CSharp
+        m_MethodName: onPlaceItem
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &868891106
 GameObject:
   m_ObjectHideFlags: 0
@@ -8363,6 +8392,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 2e4380e7583a5c140989f5bf0cd6f3ab, type: 2}
   position: {fileID: 1764721750}
+  target: {fileID: 11400000, guid: b65b4f08a79fe6346a45ec78e9c2bbb9, type: 2}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &904320541
 GameObject:
   m_ObjectHideFlags: 0
@@ -9591,6 +9625,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: be9bd725e4fa8e84890e2529ab8e0494, type: 2}
   position: {fileID: 0}
+  target: {fileID: 0}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1007451257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9853,7 +9892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035549848}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.32535303, y: -0.62781006, z: 0.32535303, w: 0.62781006}
+  m_LocalRotation: {x: 0.325353, y: -0.62781006, z: 0.325353, w: 0.62781006}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10754,6 +10793,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: e82c48d1be9efea49bd216ca1fc71300, type: 2}
   position: {fileID: 1863090295}
+  target: {fileID: 11400000, guid: b65b4f08a79fe6346a45ec78e9c2bbb9, type: 2}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1125867621
 GameObject:
   m_ObjectHideFlags: 0
@@ -10833,9 +10877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 67afc382462857b42bf8b923a22c578e, type: 2}
   item: {fileID: 1147135548}
-  targets:
-  - {fileID: 864877034}
-  correctPlaced: 0
+  currentpos: {fileID: 0}
 --- !u!1001 &1144083498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11035,6 +11077,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 39c7c354fefbd004698585c51868bf58, type: 2}
   position: {fileID: 1926277951}
+  target: {fileID: 11400000, guid: 92fc85d0b8018804590bafae975cd10d, type: 2}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1162793710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11479,10 +11526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: b65b4f08a79fe6346a45ec78e9c2bbb9, type: 2}
   item: {fileID: 711383488}
-  targets:
-  - {fileID: 1125834598}
-  - {fileID: 897939913}
-  correctPlaced: 0
+  currentpos: {fileID: 0}
 --- !u!1001 &1253172161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12133,9 +12177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 083d777de8ff5e142aa3ec3c0737eb2f, type: 2}
   item: {fileID: 1205382389}
-  targets:
-  - {fileID: 1335120526}
-  correctPlaced: 0
+  currentpos: {fileID: 0}
 --- !u!1 &1292293844
 GameObject:
   m_ObjectHideFlags: 0
@@ -12805,6 +12847,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 5f0195c5efb22354a9e1f5e7afeb77ce, type: 2}
   position: {fileID: 221133134}
+  target: {fileID: 11400000, guid: 083d777de8ff5e142aa3ec3c0737eb2f, type: 2}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1335327994
 GameObject:
   m_ObjectHideFlags: 0
@@ -13426,9 +13473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 2e6b21535e08ebd4ebc7c6b4a70a8ec0, type: 2}
   item: {fileID: 970277589}
-  targets:
-  - {fileID: 1799369747}
-  correctPlaced: 0
+  currentpos: {fileID: 0}
 --- !u!1 &1400249170
 GameObject:
   m_ObjectHideFlags: 0
@@ -13604,6 +13649,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: a5a8659e0f33a6f49b57877189bf95c5, type: 2}
   position: {fileID: 1253172163}
+  target: {fileID: 11400000, guid: 3233ab6c9a80dd6499f7511f2a3a0d02, type: 2}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1408271623
 GameObject:
   m_ObjectHideFlags: 0
@@ -13651,9 +13701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 3233ab6c9a80dd6499f7511f2a3a0d02, type: 2}
   item: {fileID: 1608474694}
-  targets:
-  - {fileID: 1407811060}
-  correctPlaced: 0
+  currentpos: {fileID: 0}
 --- !u!1001 &1409853347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15154,6 +15202,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: ae9b7a1a5d236a14e93715eed320e8d2, type: 2}
   position: {fileID: 1190229649}
+  target: {fileID: 11400000, guid: d72de09cd12c8694baa775e000a1e861, type: 2}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1630160354
 GameObject:
   m_ObjectHideFlags: 3
@@ -15973,9 +16026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 75c55f93aa143324193b9db3076c98cf, type: 2}
   item: {fileID: 1534736353}
-  targets:
-  - {fileID: 302220663}
-  correctPlaced: 0
+  currentpos: {fileID: 0}
 --- !u!1 &1799369745
 GameObject:
   m_ObjectHideFlags: 0
@@ -16022,6 +16073,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: cd51fb4dac51e8945a6d3758171f6cd2, type: 2}
   position: {fileID: 730741416}
+  target: {fileID: 11400000, guid: 2e6b21535e08ebd4ebc7c6b4a70a8ec0, type: 2}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1919579250}
+        m_TargetAssemblyTypeName: PositionActivator, Assembly-CSharp
+        m_MethodName: onPlaceItem
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1800697113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16799,10 +16867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: fc94e9eee6746454298b0a6a6279c92b, type: 2}
   item: {fileID: 1272049544}
-  targets:
-  - {fileID: 684769151}
-  - {fileID: 991867017}
-  correctPlaced: 0
+  currentpos: {fileID: 0}
 --- !u!1 &1916473576
 GameObject:
   m_ObjectHideFlags: 0
@@ -16849,6 +16914,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 7fea01ad7a0e6444b8481829a758f429, type: 2}
   position: {fileID: 1481288815}
+  target: {fileID: 11400000, guid: 0ce19e237528da445b4b5e7a924adf44, type: 2}
+  itemnamecorrect: 0
+  itemwasplaced:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1919579245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16908,6 +16978,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1587852896580244, guid: c28e458222ee79741b1996c6c37ad99f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1919579248}
+    - targetCorrespondingSourceObject: {fileID: 1587852896580244, guid: c28e458222ee79741b1996c6c37ad99f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1919579250}
+    - targetCorrespondingSourceObject: {fileID: 1587852896580244, guid: c28e458222ee79741b1996c6c37ad99f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1919579249}
   m_SourcePrefab: {fileID: 100100000, guid: c28e458222ee79741b1996c6c37ad99f, type: 3}
 --- !u!4 &1919579246 stripped
 Transform:
@@ -16936,14 +17012,46 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 39c7c354fefbd004698585c51868bf58, type: 2}
   - {fileID: 11400000, guid: d3b427d9473710a4d80196e19a0965aa, type: 2}
   path: {fileID: 11400000, guid: 174c818181640f94792ebcd530c5f525, type: 2}
-  items:
-  - {fileID: 1888940198}
-  - {fileID: 662528521}
-  - {fileID: 47754596}
-  - {fileID: 1291959669}
-  - {fileID: 1137941733}
-  - {fileID: 1398948612}
+  watchpositions:
+  - {fileID: 991867017}
+  - {fileID: 353700564}
+  - {fileID: 1916473578}
+  - {fileID: 1335120526}
+  - {fileID: 864877034}
+  - {fileID: 1799369747}
   rewareded: 0
+--- !u!114 &1919579249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919579247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30b1cf50425831498c23c1464b23dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  watchedpositions:
+  - {fileID: 991867017}
+  positions:
+  - {fileID: 11400000, guid: 0e023f2e7069a1244815bd4c77c16484, type: 2}
+--- !u!114 &1919579250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919579247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30b1cf50425831498c23c1464b23dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  watchedpositions:
+  - {fileID: 353700564}
+  positions:
+  - {fileID: 11400000, guid: cd51fb4dac51e8945a6d3758171f6cd2, type: 2}
 --- !u!1001 &1923563578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17741,9 +17849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ited: {fileID: 11400000, guid: 92fc85d0b8018804590bafae975cd10d, type: 2}
   item: {fileID: 981296346}
-  targets:
-  - {fileID: 1160967478}
-  correctPlaced: 0
+  currentpos: {fileID: 0}
 --- !u!1001 &1972296645
 PrefabInstance:
   m_ObjectHideFlags: 0

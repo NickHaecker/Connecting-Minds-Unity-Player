@@ -6,11 +6,13 @@ public class Item : MonoBehaviour
 {
     public ItemData ited;
     [SerializeField]private GameObject item;
-    [SerializeField]
-    private List<Position> targets;
+    //[SerializeField]
+    //private List<Position> targets;
+    [SerializeField] private Position currentpos;
 
-    [SerializeField]
-    private bool correctPlaced = false;
+
+    /*[SerializeField]
+    private bool correctPlaced = false;*/
 
 
     public void activate()
@@ -22,6 +24,8 @@ public class Item : MonoBehaviour
     public void deactivate() 
     { 
         item.SetActive(false);
+        currentpos.removeItem(this);
+        currentpos = null;
         Debug.Log(item.name + " wurde deaktiviert");
     }
     public void SetPosition(Position position)
@@ -29,9 +33,12 @@ public class Item : MonoBehaviour
         item.transform.position = position.transform.position;
         item.transform.rotation = position.transform.rotation;
 
+        currentpos = position;
+
         Debug.Log("Setze "+item.name + " auf Position"+ position.name);
+        item.SetActive(true);
     }
-    public bool IsTarget(CMPosition position)
+    /*public bool IsTarget(CMPosition position)
     {
         //return position.Name == target.posdat.Name;
         bool iscontaining = false;
@@ -47,15 +54,16 @@ public class Item : MonoBehaviour
 
 
         return iscontaining;
-    }
-    public void SetPlacedState(bool state)
+    }*/
+    /*public void SetPlacedState(bool state)
     {
-        correctPlaced = state;
+        //correctPlaced = state;
+
         Debug.Log(item.name + " wurde korrekt Platziert");
 
     }
     public bool GetPlacedState()
     {
         return correctPlaced;
-    }
+    }*/
 }

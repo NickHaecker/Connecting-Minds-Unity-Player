@@ -17,12 +17,14 @@ public class Items : MonoBehaviour
 
         Item i = listItems.Find(item => item.ited.Name == itemname);
         Position pos = positions.Find(p => p.posdat.Name == position.Name);
-        i.SetPosition(pos);
-        i.activate();
+        //i.SetPosition(pos);
+        //i.activate();
+        pos.takeItem(i);
 
-        if (i.IsTarget(position))
+        /*if (pos.placedCorrect())//i.IsTarget(position))
         {
-            i.SetPlacedState(true);
+            
+            //i.SetPlacedState(true);
             //Paths paths = pos.GetPath();
             //if (paths != null && !paths.GetIsUnlocked())
             //{
@@ -65,12 +67,12 @@ public class Items : MonoBehaviour
             //}
             //}
 
-        }
+        }*/
 
     }
 
 
-    public void RemoveItem(CMItem item, CMPosition position)
+    /*public void RemoveItem(CMItem item, CMPosition position)
     {
         string itemname = item.Name;
 
@@ -78,13 +80,13 @@ public class Items : MonoBehaviour
         Item i = listItems.Find(item => item.ited.Name == itemname);
         i.deactivate();
 
-    }
+    }*/
 
     public void deactivateAll()
     {
         foreach (Item item in listItems)
         {
-            item.SetPlacedState(false);
+            //item.SetPlacedState(false);
             item.deactivate();
         }
     }

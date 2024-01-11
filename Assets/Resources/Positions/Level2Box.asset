@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level2Box
   m_EditorClassIdentifier: 
   _id: 
-  Name: Capsule
+  Name: "Bodenplatte vor der T\xFCr"
   ID: 6

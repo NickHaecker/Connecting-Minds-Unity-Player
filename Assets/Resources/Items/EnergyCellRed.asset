@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EnergyCellRed
   m_EditorClassIdentifier: 
   _id: 
-  Name: EnergyCellRed
+  Name: Energiezelle Rot
   Description: Die Energiezelle leuchtet rot

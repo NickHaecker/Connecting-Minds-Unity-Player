@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level3CardReader
   m_EditorClassIdentifier: 
   _id: 
-  Name: KeycardReader
+  Name: "Bodenplatte neben der T\xFCr"
   ID: 12

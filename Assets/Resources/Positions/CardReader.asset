@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85781774d4db5a41a6c66bf9f24326b, type: 3}
   m_Name: CardReader
   m_EditorClassIdentifier: 
-  Name: Keycardreader
+  _id: 
+  Name: "Kartenleseger\xE4t"
   ID: 1

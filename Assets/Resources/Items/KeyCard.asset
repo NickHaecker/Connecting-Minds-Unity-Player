@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50effd4ccad22b140852b65ce3836f83, type: 3}
   m_Name: KeyCard
   m_EditorClassIdentifier: 
-  Name: KeyCard
+  _id: 
+  Name: "Schl\xFCsselkarte"
   Description: "Dies ist eine Schl\xFCsselkarte des Managers, mit welchem man Zutritt
     zu bestimmten bereichen bekommt."

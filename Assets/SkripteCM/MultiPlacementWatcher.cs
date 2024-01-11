@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
+
 
 
 public enum KindOfReward
@@ -20,7 +20,7 @@ public class MultiPlacementWatcher : MonoBehaviour
     [SerializeField] private PathData path;
 
     [SerializeField]
-    private List<Item> items = new List<Item>();
+    private List<Position> watchpositions = new List<Position>();
 
     [SerializeField] private bool rewareded = false;
 
@@ -32,16 +32,16 @@ public class MultiPlacementWatcher : MonoBehaviour
         }
         int active = 0;
 
-        foreach(Item item in items)
+        foreach(Position pos in watchpositions)
         {
-            if (item.GetPlacedState())
+            if (pos.placedCorrect())
             {
                 active++;
             }
         }
 
 
-        if(active == items.Count)
+        if(active == watchpositions.Count)
         {
             TakeReward();
         }
@@ -51,7 +51,7 @@ public class MultiPlacementWatcher : MonoBehaviour
         rewareded = true;
 
 
-        if(reward == KindOfReward.POSITION)
+        /*if(reward == KindOfReward.POSITION)
         {
             foreach (PositionData rewardPosition in positions)
             {
@@ -59,7 +59,7 @@ public class MultiPlacementWatcher : MonoBehaviour
                 unlockPosition.AddData("Position", rewardPosition.GetData<PositionObject>());
                 NetworkSingleton.Instance.GetNetworkController().GetWebSocket().Send(unlockPosition.ToJson());
             }
-        }
+        }*/
         if(reward == KindOfReward.PATH)
         {
             PositionObject[] positionObjects = new PositionObject[positions.Count];

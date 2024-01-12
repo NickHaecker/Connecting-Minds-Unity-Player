@@ -60,55 +60,55 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(mouseButton))
-        {
-            dragging = true;
-            mouseStart = Input.mousePosition;
-            targetStart = vcam.Follow.position;
-            velocity = Vector3.zero;
-        }
-        if (Input.GetMouseButtonUp(mouseButton))
-        {
-            dragging = false;
-        }
+        //if (Input.GetMouseButtonDown(mouseButton))
+        //{
+        //    dragging = true;
+        //    mouseStart = Input.mousePosition;
+        //    targetStart = vcam.Follow.position;
+        //    velocity = Vector3.zero;
+        //}
+        //if (Input.GetMouseButtonUp(mouseButton))
+        //{
+        //    dragging = false;
+        //}
 
-        TargetZoomLevel -= Input.mouseScrollDelta.y * ScrollSpeed * Time.deltaTime;
-        TargetZoomLevel = Mathf.Clamp(TargetZoomLevel, MinZoom, MaxZoom);
+        //TargetZoomLevel -= Input.mouseScrollDelta.y * ScrollSpeed * Time.deltaTime;
+        //TargetZoomLevel = Mathf.Clamp(TargetZoomLevel, MinZoom, MaxZoom);
 
-        var d = TargetZoomLevel - ZoomLevel;
-        d = Cinemachine.Utility.Damper.Damp(d, ZoomDamp, Time.deltaTime);
-        ZoomLevel = ZoomLevel + d;
-        //SetZoomLevel();
+        //var d = TargetZoomLevel - ZoomLevel;
+        //d = Cinemachine.Utility.Damper.Damp(d, ZoomDamp, Time.deltaTime);
+        //ZoomLevel = ZoomLevel + d;
+        ////SetZoomLevel();
 
-        var oldPos = vcam.m_Follow.position;
-        Vector3 newPos = oldPos;
+        //var oldPos = vcam.m_Follow.position;
+        //Vector3 newPos = oldPos;
 
-        if (dragging)
-        {
-            if (Raycast(Input.mousePosition, out var point))
-            {
-                Raycast(mouseStart, out var startPoint);
-                var delta = point - startPoint;
-                delta.y = 0;
+        //if (dragging)
+        //{
+        //    if (Raycast(Input.mousePosition, out var point))
+        //    {
+        //        Raycast(mouseStart, out var startPoint);
+        //        var delta = point - startPoint;
+        //        delta.y = 0;
 
-                newPos = targetStart - delta;
-                velocity = (newPos - oldPos) * (1f / Time.deltaTime);
-            }
-        }
-        else
-        {
-            newPos += velocity * Time.deltaTime;
-            float speed = Mathf.Min(MaxSpeed, velocity.magnitude);
-            velocity = velocity.normalized * (Mathf.Max(0, speed - deceleration));
-            //velocity.Scale(Vector3.one * deceleration);
-        }
+        //        newPos = targetStart - delta;
+        //        velocity = (newPos - oldPos) * (1f / Time.deltaTime);
+        //    }
+        //}
+        //else
+        //{
+        //    newPos += velocity * Time.deltaTime;
+        //    float speed = Mathf.Min(MaxSpeed, velocity.magnitude);
+        //    velocity = velocity.normalized * (Mathf.Max(0, speed - deceleration));
+        //    //velocity.Scale(Vector3.one * deceleration);
+        //}
 
-        if (clampEnable)
-        {
-            if (!bounds.Contains(newPos))
-                newPos = bounds.ClosestPoint(newPos);
-        }
-        vcam.m_Follow.position = newPos;
+        //if (clampEnable)
+        //{
+        //    if (!bounds.Contains(newPos))
+        //        newPos = bounds.ClosestPoint(newPos);
+        //}
+        //vcam.m_Follow.position = newPos;
     }
 
     bool Raycast(Vector2 screenPos, out Vector3 point)

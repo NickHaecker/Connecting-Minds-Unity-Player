@@ -249,6 +249,10 @@ PrefabInstance:
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 1115722853}
+    - target: {fileID: 1418682555214633636, guid: 73e3e8eaee8d5c4469901201b2dd96e8, type: 3}
+      propertyPath: freeLookCamera
+      value: 
+      objectReference: {fileID: 932017342}
     - target: {fileID: 5585926984169589646, guid: 73e3e8eaee8d5c4469901201b2dd96e8, type: 3}
       propertyPath: m_Name
       value: Ethan Variant
@@ -3782,6 +3786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: d3b427d9473710a4d80196e19a0965aa, type: 2}
   position: {fileID: 581103685}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: 75c55f93aa143324193b9db3076c98cf, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -4043,6 +4048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: be02f132c88bb2946a1a18b84c47b36a, type: 2}
   position: {fileID: 1278592794}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: 560faf017fb80c94890a33ea0632d239, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -6587,6 +6593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 67830112187049542a49a270806bc86c, type: 2}
   position: {fileID: 1578496301}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: fc94e9eee6746454298b0a6a6279c92b, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -6942,6 +6949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 3537640095c21c649af7e78d8e2f1866, type: 2}
   position: {fileID: 268781400}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: 5dafbc56b81c5c9468dd1c147a07f40f, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -7350,15 +7358,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3537789197241106721, guid: 753ff912b5edb4f439e9d1e7afcfba97, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.46011862
+      value: 0.46011865
       objectReference: {fileID: 0}
     - target: {fileID: 3537789197241106721, guid: 753ff912b5edb4f439e9d1e7afcfba97, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000070007154
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3537789197241106721, guid: 753ff912b5edb4f439e9d1e7afcfba97, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000036280145
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3537789197241106721, guid: 753ff912b5edb4f439e9d1e7afcfba97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8305,6 +8313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 0e023f2e7069a1244815bd4c77c16484, type: 2}
   position: {fileID: 1106278781}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: 67afc382462857b42bf8b923a22c578e, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -8392,6 +8401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 2e4380e7583a5c140989f5bf0cd6f3ab, type: 2}
   position: {fileID: 1764721750}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: b65b4f08a79fe6346a45ec78e9c2bbb9, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -9625,6 +9635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: be9bd725e4fa8e84890e2529ab8e0494, type: 2}
   position: {fileID: 0}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: fc94e9eee6746454298b0a6a6279c92b, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -9904,7 +9915,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035549848}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.325353, y: -0.62781006, z: 0.325353, w: 0.62781006}
+  m_LocalRotation: {x: 0.32535303, y: -0.62781006, z: 0.32535303, w: 0.62781006}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10892,6 +10903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: e82c48d1be9efea49bd216ca1fc71300, type: 2}
   position: {fileID: 1863090295}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: b65b4f08a79fe6346a45ec78e9c2bbb9, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -11176,6 +11188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 39c7c354fefbd004698585c51868bf58, type: 2}
   position: {fileID: 1926277951}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: 92fc85d0b8018804590bafae975cd10d, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -12949,6 +12962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 5f0195c5efb22354a9e1f5e7afeb77ce, type: 2}
   position: {fileID: 221133134}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: 083d777de8ff5e142aa3ec3c0737eb2f, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -13751,6 +13765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: a5a8659e0f33a6f49b57877189bf95c5, type: 2}
   position: {fileID: 1253172163}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: 3233ab6c9a80dd6499f7511f2a3a0d02, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -15304,6 +15319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: ae9b7a1a5d236a14e93715eed320e8d2, type: 2}
   position: {fileID: 1190229649}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: d72de09cd12c8694baa775e000a1e861, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -16175,6 +16191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: cd51fb4dac51e8945a6d3758171f6cd2, type: 2}
   position: {fileID: 730741416}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: 2e6b21535e08ebd4ebc7c6b4a70a8ec0, type: 2}
   itemnamecorrect: 0
   itemwasplaced:
@@ -17004,6 +17021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posdat: {fileID: 11400000, guid: 7fea01ad7a0e6444b8481829a758f429, type: 2}
   position: {fileID: 1481288815}
+  item: {fileID: 0}
   target: {fileID: 11400000, guid: 0ce19e237528da445b4b5e7a924adf44, type: 2}
   itemnamecorrect: 0
   itemwasplaced:

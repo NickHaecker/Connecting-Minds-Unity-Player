@@ -79,12 +79,13 @@ public class ClientListener : MonoBehaviour
             //SessionData sessionData = new SessionData();
             SessionData sessionData = JsonConvert.DeserializeObject<SessionData>(revent.GetBody()["SessionData"].ToString());
             PlacedItem[] items = sessionData.PlacedItems;
-            this.items.deactivateAll();
+            //this.items.deactivateAll();
 
-            foreach (PlacedItem item in items)
-            {
-                OnPlaceItem(item);
-            }
+            //foreach (PlacedItem item in items)
+            //{
+            //    OnPlaceItem(item);
+            //}
+            this.items.PlaceItem(items);
 
             CMPath[] paths = sessionData.UnlockedPaths;
             pathobj.deactivateAll();
@@ -99,7 +100,7 @@ public class ClientListener : MonoBehaviour
         {
             CMPath[] paths = JsonConvert.DeserializeObject<CMPath[]>(revent.GetBody()["Paths"].ToString());
             pathobj.deactivateAll();
-            
+
             foreach (CMPath path in paths)
             {
                 OnUnlockPath(path);
@@ -121,26 +122,28 @@ public class ClientListener : MonoBehaviour
             //die Items sind Objekte von ItemToPlace in dieser Klasse wird spezifiziert
             //was es für Items sind und wo sie platziert werden können
             PlacedItem[] pitems = JsonConvert.DeserializeObject<PlacedItem[]>(revent.GetBody()["Items"].ToString());
-            items.deactivateAll();
+            //items.deactivateAll();
+            this.items.PlaceItem(pitems);
 
 
-            foreach (PlacedItem item in pitems)
-            {
-                OnPlaceItem(item);
-            }
+            //foreach (PlacedItem item in pitems)
+            //{
+            //    OnPlaceItem(item);
+            //}
         }
         if (revent.eventName == "ON_REMOVE_ITEM")
         {
             //Bei diesem Event wird das Item von Spieler 2 wieder aufgesammelt
             //Das Item verschwindet dann bei Spieler 1
             PlacedItem[] pitem = JsonConvert.DeserializeObject<PlacedItem[]>(revent.GetBody()["Items"].ToString());
-            items.deactivateAll();
+            //items.deactivateAll();
+            this.items.PlaceItem(pitem);
 
             Debug.Log("OnRemoveItem Event");
-            foreach (PlacedItem item in pitem)
-            {
-                OnPlaceItem(item);
-            }            
+            //foreach (PlacedItem item in pitem)
+            //{
+            //    OnPlaceItem(item);
+            //}            
         }
         if (revent.eventName == "SEND_MESSAGE")
         {
@@ -229,7 +232,7 @@ public class ClientListener : MonoBehaviour
     {
         Debug.Log("OnPlaceItem Methodenaufruf");
         //Items item = new Items();
-        items.PlaceItem(itemplace.Item, itemplace.Position);
+        //items.PlaceItem(itemplace.Item, itemplace.Position);
 
     }
     void OnUnlockPath(CMPath path)

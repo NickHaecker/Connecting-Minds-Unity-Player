@@ -20,6 +20,24 @@ public class Item : MonoBehaviour
         item.SetActive(true);
         Debug.Log(item.name+" wurde aktiviert");
     }
+    public bool IsActive()
+    {
+        return item.activeInHierarchy;
+    }
+
+    public bool IsInList(PlacedItem[] items)
+    {
+        bool isIn = false;
+
+        foreach(PlacedItem item in items)
+        {
+            if(item.Item.Name == ited.Name)
+            {
+                isIn = true;
+            }
+        }
+        return isIn;
+    }
 
     public void deactivate() 
     { 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Items : MonoBehaviour
@@ -10,21 +11,45 @@ public class Items : MonoBehaviour
     [SerializeField] private PathObjects pathobj;
 
 
-    public void PlaceItem(CMItem item, CMPosition position)
+    public void PlaceItem(PlacedItem[] placedItems)
     {
-        string itemname = item.Name;
 
+        foreach(Item item in listItems)
+        {
+            if (item.IsInList(placedItems))
+            {
+                if (!item.IsActive())
+                {
+                    //Position target;
+                    //CMItem cI = placedItems.ToList().Find(pI => pI.Item.Name == item.ited.Name).Item;
+                    PlacedItem placedItem = placedItems.ToList().Find(p => p.Item.Name == item.ited.Name);
+                    //Item i = listItems.Find(item => item.ited.Name == placedItem.Item.Name);
+                    Position pos = positions.Find(p => p.posdat.ID == placedItem.Position.ID);
+                    pos.takeItem(item);
+                }
+            }
+            else
+            {
+                if (item.IsActive())
+                {
+                    item.deactivate();
+                }
+            }
+        }
 
-        Item i = listItems.Find(item => item.ited.Name == itemname);
-        Position pos = positions.Find(p => p.posdat.ID == position.ID);
+        //string itemname = item.Name;
+//CMItem item, CMPosition position
 
-        //i.SetPosition(pos);
-        //i.activate();
-        pos.takeItem(i);
+        //Item i = listItems.Find(item => item.ited.Name == itemname);
+        //Position pos = positions.Find(p => p.posdat.ID == position.ID);
+
+ 
+        //pos.takeItem(i);
 
         /*if (pos.placedCorrect())//i.IsTarget(position))
         {
-            
+                   //i.SetPosition(pos);
+        //i.activate();
             //i.SetPlacedState(true);
             //Paths paths = pos.GetPath();
             //if (paths != null && !paths.GetIsUnlocked())

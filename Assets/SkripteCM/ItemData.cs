@@ -33,6 +33,7 @@ public class ItemObject : ScriptableObjectData
     {
         Name = item.Name;
         Description = item.Description;
+        ID = item.ID;
     }
 
 }

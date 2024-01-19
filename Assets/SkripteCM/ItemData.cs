@@ -8,6 +8,7 @@ public class ItemData : Indexable
 {
     [HideInInspector]
     public string _id;
+    public string ID;
     public string Name;
     public string Description;
 
@@ -26,6 +27,7 @@ public class ItemObject : ScriptableObjectData
 {
     public string Name;
     public string Description;
+    public string ID;
     public string _id;
     public ItemObject(ItemData item)
     {

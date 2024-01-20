@@ -26,6 +26,7 @@ public class Position : MonoBehaviour
     {
         this.item = item;
         item.SetPosition(this);
+        itemnamecorrect = item.ited.Name == target.Name;
         itemwasplaced?.Invoke(this.item!=null);
     }
 
@@ -36,9 +37,13 @@ public class Position : MonoBehaviour
            return false;
         }
 
-        itemnamecorrect = item.ited.Name == target.Name;
+        
 
         return itemnamecorrect;
+    }
+    public bool isItemPlaced()
+    {
+        return this.item != null;
     }
 
     public void removeItem(Item item)
@@ -50,6 +55,7 @@ public class Position : MonoBehaviour
         if (this.item == item)
         {
             this.item = null;
+            itemnamecorrect = false;v
             itemwasplaced?.Invoke(this.item != null);
         }
     }

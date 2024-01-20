@@ -24,6 +24,7 @@ public struct CMItem
 {
     public string _id;
     public string Name;
+    public string ID;
     public string Description;
 }
 public struct CMPosition

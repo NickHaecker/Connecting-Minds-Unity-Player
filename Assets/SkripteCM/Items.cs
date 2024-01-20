@@ -22,7 +22,7 @@ public class Items : MonoBehaviour
                 {
                     //Position target;
                     //CMItem cI = placedItems.ToList().Find(pI => pI.Item.Name == item.ited.Name).Item;
-                    PlacedItem placedItem = placedItems.ToList().Find(p => p.Item.Name == item.ited.Name);
+                    PlacedItem placedItem = placedItems.ToList().Find(p => p.Item.ID == item.ited.ID);
                     //Item i = listItems.Find(item => item.ited.Name == placedItem.Item.Name);
                     Position pos = positions.Find(p => p.posdat.ID == placedItem.Position.ID);
                     pos.takeItem(item);

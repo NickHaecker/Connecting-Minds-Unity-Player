@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 using WebSocketSharp;
 using TMPro;
 using Newtonsoft.Json;
-using static ClientListener;
 
 public class MainMenu : MonoBehaviour
 {

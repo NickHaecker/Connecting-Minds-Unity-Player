@@ -55,7 +55,7 @@ public class Position : MonoBehaviour
         if (this.item == item)
         {
             this.item = null;
-            itemnamecorrect = false;v
+            itemnamecorrect = false;
             itemwasplaced?.Invoke(this.item != null);
         }
     }

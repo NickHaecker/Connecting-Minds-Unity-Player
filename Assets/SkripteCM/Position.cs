@@ -26,7 +26,7 @@ public class Position : MonoBehaviour
     {
         this.item = item;
         item.SetPosition(this);
-        itemnamecorrect = item.ited.Name == target.Name;
+        itemnamecorrect = item.ited.ID == target.ID;
         itemwasplaced?.Invoke(this.item!=null);
     }
 

@@ -46,18 +46,18 @@ public class PositionActivator : MonoBehaviour
     public void onPlaceItem(bool state)
     {
 
-        int active = 0;
+        int placed = 0;
 
         foreach (Position pos in watchedpositions)
         {
-            if (pos.placedCorrect())
+            if (pos.isItemPlaced())
             {
-                active++;
+                placed++;
             }
         }
         if (wasactivated)
         {
-            if(active!=watchedpositions.Count)
+            if (placed != watchedpositions.Count)
             {
                 RemoveReward();
             }
@@ -65,7 +65,7 @@ public class PositionActivator : MonoBehaviour
         else
         {
 
-            if (active == watchedpositions.Count)
+            if (placed == watchedpositions.Count)
             {
                 TakeReward();
             }

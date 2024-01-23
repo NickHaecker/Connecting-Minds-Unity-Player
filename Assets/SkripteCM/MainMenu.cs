@@ -44,6 +44,11 @@ public class MainMenu : MonoBehaviour
         NetworkSingleton.Instance.GetNetworkController().TakeEvent += onTakeEvent;
 
     }
+
+    /*private void Awake()
+    {
+        DontDestroyOnLoad(sessionIDText);
+    }*/
     private void onTakeEvent(ReceivedEvent revent)
     {
         if (revent.eventName == "ON_CREATE_SESSION")

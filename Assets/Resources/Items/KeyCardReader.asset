@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: KeyCardReader
   m_EditorClassIdentifier: 
   _id: 
+  ID: terminal
   Name: Terminal
   Description: Vielleicht kann es Karten lesen vielleicht ist es auch legasteniker

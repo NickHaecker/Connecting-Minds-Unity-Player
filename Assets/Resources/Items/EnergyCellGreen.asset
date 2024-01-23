@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: EnergyCellGreen
   m_EditorClassIdentifier: 
   _id: 
+  ID: energy-cell-green
   Name: "Energiezelle Gr\xFCn"
   Description: "Diese Energiezelle leuchtet Gr\xFCn."

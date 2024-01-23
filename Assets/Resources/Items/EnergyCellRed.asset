@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: EnergyCellRed
   m_EditorClassIdentifier: 
   _id: 
+  ID: energy-cell-red
   Name: Energiezelle Rot
   Description: Die Energiezelle leuchtet rot

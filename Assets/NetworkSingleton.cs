@@ -32,10 +32,10 @@ public class NetworkSingleton : MonoBehaviour
 
     }
 
-    private void OnDestroy()
-    {
-        _controller.TakeEvent -= onTakeEvent;
-    }
+    //private void OnDestroy()
+    //{
+    //    _controller.TakeEvent -= onTakeEvent;
+    //}
 
     public NetworkController GetNetworkController()
     {

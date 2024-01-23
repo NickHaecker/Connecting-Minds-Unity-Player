@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Mars
   m_EditorClassIdentifier: 
   _id: 
+  ID: mars
   Name: Mars
   Description: Sounds like a Schokoriegel

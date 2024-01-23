@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: KeyCard
   m_EditorClassIdentifier: 
   _id: 
+  ID: keycard
   Name: "Schl\xFCsselkarte"
   Description: "Dies ist eine Schl\xFCsselkarte des Managers, mit welchem man Zutritt
     zu bestimmten bereichen bekommt."

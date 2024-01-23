@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: EnergyCellMagenta
   m_EditorClassIdentifier: 
   _id: 
+  ID: energy-cell-magenta
   Name: Energiezelle Magenta
   Description: Eine Energyzelle die in einem Magenta leuchtet

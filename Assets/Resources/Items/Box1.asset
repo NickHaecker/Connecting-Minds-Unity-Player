@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Box1
   m_EditorClassIdentifier: 
   _id: 
+  ID: box-1
   Name: Box 1
   Description: This is a nice Box

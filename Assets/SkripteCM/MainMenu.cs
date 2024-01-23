@@ -179,5 +179,8 @@ public class MainMenu : MonoBehaviour
         }
         Debug.Log("Info wurde geklickt");
     }
-
+    private void OnDestroy()
+    {
+        NetworkSingleton.Instance.GetNetworkController().TakeEvent -= onTakeEvent;
+    }
 }
